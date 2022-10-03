@@ -214,6 +214,13 @@
       "settings": {
         "prova_sez": ""
       }
+    },
+    "1664798433510c3ddd": {
+      "type": "provades",
+      "settings": {
+        "des": "",
+        "sin": ""
+      }
     }
   },
   "order": [
@@ -223,6 +230,7 @@
     "collage",
     "video",
     "multicolumn",
-    "1664798198aab43a0a"
+    "1664798198aab43a0a",
+    "1664798433510c3ddd"
   ]
 }
