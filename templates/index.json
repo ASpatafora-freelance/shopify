@@ -212,7 +212,8 @@
     "1664798198aab43a0a": {
       "type": "prova-sez",
       "settings": {
-        "prova_sez": "però funziona così"
+        "liquid_text": "edo",
+        "liquid_checkbox": true
       }
     },
     "1664798433510c3ddd": {
