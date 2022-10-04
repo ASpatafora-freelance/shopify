@@ -1,5 +1,5 @@
 {% assign blog = section.settings.new-blog %}
-{{ section.settings.new-blog.articles_count }}
+{{ blog.articles_count }}
 
 {% unless blog.articles_count == 0 %}
    {% for article in blog.articles %}}
