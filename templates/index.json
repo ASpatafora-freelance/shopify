@@ -213,7 +213,11 @@
       "type": "prova-sez",
       "settings": {
         "liquid_text": "edo",
-        "liquid_checkbox": true
+        "liquid_checkbox": true,
+        "liquid_radio": "edo",
+        "liquid_range": 3,
+        "liquid_select": "zardo",
+        "liquid_textarea": "hey"
       }
     },
     "1664798433510c3ddd": {
