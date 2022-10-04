@@ -13,6 +13,8 @@
 
 {{ section.settings.liquid_select }}
 
+{{ section.settings.liquid_textarea }}
+
 {% schema %}
 {
   "name": "Liquid refrence",
@@ -72,6 +74,11 @@
         }
       ],
        "default": "edoz"
+    },
+    {
+      "id": "liquid_textarea",
+      "type": "textarea",
+      "label": "Text here"
     }
   ],
   "templates": ["index", "page", "product"],
