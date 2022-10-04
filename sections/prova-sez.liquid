@@ -11,6 +11,8 @@
 
 {{ section.settings.liquid_range }}
 
+{{ section.settings.liquid_select }}
+
 {% schema %}
 {
   "name": "Liquid refrence",
@@ -54,6 +56,21 @@
       "step":3,
       "unit":"#ed",
       "default": 3
+    },
+     {
+      "id": "liquid_select",
+      "type": "select",
+      "label": "select_on",
+      "options": [
+        {
+          "value": "edoz",
+          "label": "edoz"
+        },
+        {
+          "value": "zardo",
+          "label": "zardo"
+        }
+      ]
     }
   ],
   "templates": ["index", "page", "product"],
