@@ -230,7 +230,8 @@
     "166490726900617825": {
       "type": "blog-post",
       "settings": {
-        "liquid_postr": 3
+        "liquid_postr": 3,
+        "new-blog": "notizie"
       }
     }
   },
