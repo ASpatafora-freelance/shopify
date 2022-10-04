@@ -5,6 +5,7 @@
    {% for article in blog.articles %}
       <p>titolo:
       {{ article.title }}
+      {{ article.url }}
       </p>
      <img src="{{ article.image | img_url: '350x' }}"/>
    {% endfor %}
