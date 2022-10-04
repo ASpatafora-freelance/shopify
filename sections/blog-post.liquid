@@ -1,8 +1,7 @@
 {{ section.settings.liquid_postr }}
 
-{% for blog in blogs %}}
+{% assign blog = section.settings.new-blog %}
 {{ blog.articles_count }}
-{% endfor %}}
 
 {% unless blog.articles_count == 0 %}
 
