@@ -6,6 +6,7 @@
       <p>titolo:
       {{ article.title }}
       </p>
+     {{ article.image | img_url: '350x' }}
    {% endfor %}
 {% endunless %}
 
