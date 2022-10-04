@@ -2,11 +2,11 @@
 {{ blog.articles_count }}
 
 {% unless blog.articles_count == 0 %}
-   {% for article in blog.articles %}}
+   {% for article in blog.articles %}
       <p>titolo:
       {{ article.title }}
       </p>
-   {% endfor %}}
+   {% endfor %}
 {% endunless %}
 
 {% schema %}
