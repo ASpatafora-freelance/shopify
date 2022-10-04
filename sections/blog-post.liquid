@@ -1,6 +1,8 @@
 {{ section.settings.liquid_postr }}
 
+{% for blog in blogs %}}
 {{ blog.articles_count }}
+{% endfor %}}
 
 {% unless blog.articles_count == 0 %}
 
