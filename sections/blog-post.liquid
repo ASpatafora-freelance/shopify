@@ -1,7 +1,27 @@
+{{ section.settings.liquid_postr }}
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "blog fetch",
+    "settings": [
+      {
+      "id":"liquid_postr",
+      "type":"range",
+      "label":"Range",
+      "min":3,
+      "max":12,
+      "step":3,
+      "unit":"#ed",
+      "default": 3
+      }
+    ],
+    "templates": ["index", "page", "product"],
+    "presets": [
+    {
+      "name": "blog fetch",
+      "category": "Posts"
+    }
+  ]
   }
 {% endschema %}
 
