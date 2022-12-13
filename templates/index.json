@@ -223,8 +223,7 @@
     "1664798433510c3ddd": {
       "type": "provades",
       "settings": {
-        "des": "",
-        "sin": ""
+        "des": ""
       }
     },
     "166490726900617825": {
@@ -232,6 +231,12 @@
       "settings": {
         "liquid_postr": 3,
         "new-blog": "notizie"
+      }
+    },
+    "e4f1987f-5b6b-4129-8c48-f11d1e8aa8e8": {
+      "type": "battiscopa",
+      "settings": {
+        "des": ""
       }
     }
   },
@@ -244,6 +249,7 @@
     "multicolumn",
     "1664798198aab43a0a",
     "1664798433510c3ddd",
-    "166490726900617825"
+    "166490726900617825",
+    "e4f1987f-5b6b-4129-8c48-f11d1e8aa8e8"
   ]
 }
