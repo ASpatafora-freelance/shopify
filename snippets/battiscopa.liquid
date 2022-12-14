@@ -5,7 +5,7 @@
 <ul>
 {% for i in arr %}
   {% assign proid = product.id | string %}
-    {% if proid == i %}
+    {% if proid === i %}
        detected 
     {% endif %}
 {% endfor %}
