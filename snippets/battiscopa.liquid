@@ -6,7 +6,7 @@
 <ul>
 {% for i in arr %}
     {{ i }}
-    {% if proid == i %}
+    {% if proid == i | string %}
        detected 
     {% endif %}
 {% endfor %}
