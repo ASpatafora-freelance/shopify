@@ -2,10 +2,10 @@
 {% include "prod-data" %}
 {{ jsonprodata }}
 
-<p><strong>Student List for {{jsonprodata.class.name}}:</strong></p>
+<p><strong>Student List for {{jsonprodata.id}}:</strong></p>
 <ul>
-{% for z in jsonprodata.class.students %}
-    <li>{{i.name}} ({{i.iq}})</li>
+{% for z in jsonprodata %}
+    <li>{{i.id }}</li>
 {% endfor %}
 </ul>
 {% schema %}
