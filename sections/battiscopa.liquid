@@ -1,6 +1,10 @@
 <h1>Questa è la sezione battiscopa</h1>
 {% include "prod-data" %}
-{{jsonprodata.class}}
+<ul>
+{% for z in jsonprodata.class %}
+    <li>{{z.name}} ({{i.id}})</li>
+{% endfor %}
+</ul>
 <ul>
 {% for i in jsonprodata.class.students  %}
     <li>{{i.name}} ({{i.iq}})</li>
