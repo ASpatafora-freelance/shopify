@@ -1,4 +1,10 @@
 <h1>Questa è la sezione battiscopa</h1>
+{% include "prod-data" %}
+<ul>
+{% for i in jsonprodata.class.students  %}
+    <li>{{i.name}} ({{i.iq}})</li>
+{% endfor %}
+</ul>
 {% schema %}
   {
     "name": "battiscopa",
