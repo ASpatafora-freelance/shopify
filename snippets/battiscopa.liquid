@@ -4,7 +4,7 @@
 {{ product.id }}
 <ul>
 {% for i in arr %}
-  {% assign proid == product.id | append: "" %}}
+  {% assign proid = product.id | string %}}
     {% if product.id == i %}
        detected 
     {% endif %}
