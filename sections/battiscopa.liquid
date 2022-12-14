@@ -3,8 +3,8 @@
 {{ jsonprodata }}
 <ul>
 {% for z in jsonprodata %}
-  {% for i in z.class  %}
-    <li>{{i.name}} ({{i.id}})</li>
+  {% for i in z.students  %}
+    <li>{{i.name}} ({{i.iq}})</li>
   {% endfor %}
 {% endfor %}
 </ul>
