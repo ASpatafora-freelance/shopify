@@ -2,7 +2,9 @@
 {% include "prod-data" %}
 <ul>
 {% for z in jsonprodata %}
-    <li>{{z.class}}</li>
+  {% for i in z.class  %}
+    <li>{{z.name}} ({{z.id}})</li>
+  {% endfor %}
 {% endfor %}
 </ul>
 <ul>
