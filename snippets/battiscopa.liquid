@@ -2,7 +2,7 @@
 <h1>Questa è la sezione battiscopa</h1>
 {% include "prod-data" %}
 {{ product.id }}
-{% assign proid = product.id | string %}
+{% assign proid = product.title | string %}
 <ul>
 {% for i in arr %}
     {% if proid == i %}
