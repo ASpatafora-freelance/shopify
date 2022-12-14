@@ -4,6 +4,8 @@
 {{ product.id }}
 <ul>
 {% for i in arr %}
-    <li>{{i}}</li>
+    {% if product.id == i %}
+       detected
+    {% endif %}
 {% endfor %}
 </ul>
