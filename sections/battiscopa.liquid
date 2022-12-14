@@ -1,9 +1,8 @@
 <h1>Questa è la sezione battiscopa</h1>
 {% include "prod-data" %}
-{{ jsonprodata }}
 
 <ul>
-{% for i in jsonprodata %}
+{% for i in arr %}
     <li>{{i}}</li>
 {% endfor %}
 </ul>
