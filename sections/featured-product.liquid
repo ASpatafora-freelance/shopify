@@ -632,10 +632,9 @@
   var edo = document.getElementById("battscr");
   var edos = document.getElementById("battiscr");
 
-  edo.addEventListener("load", myScript);
-  function myScript(){
+  edo.addEventListener("load", function(){
   edos.innerHTML = edo.innerHTML;
-  }
+  });
 </script>
 {% endif %}
 {% schema %}
