@@ -1,6 +1,7 @@
 {% include "prod-data" %}
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
+{% assign bx = 0 %}
 {% for varid in product.variants %}
 {% if varid.id != product.selected_variant.id %}
   {% assign variantbat = varid.id %}
