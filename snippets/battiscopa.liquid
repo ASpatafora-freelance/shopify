@@ -6,7 +6,8 @@
 <ul>
 {% for i in arr %}
     {% if proid == i %}
-       {{ battiarr[gx] | split="," }}
+      {% assign prostat = battiarr[gx] %}
+      {{ prostat | split="," }}
     {% endif %}
   <span style="display:none;">
   {{ gx | plus: 1 }}
