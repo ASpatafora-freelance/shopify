@@ -32,14 +32,5 @@ battiscopa:
   </a>
       {% endif %}
     {% endif %}
-    {% if bx == 1 %}
-    {% if varid.id == product.selected_variant.id %}
-  <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[0].id }}">
-      <button>
-        Togli battiscopa
-      </button>
-  </a>
-      {% endif %}
-    {% endif %}
     {% assign bx = bx | plus: 1 %}
   {% endfor %}
