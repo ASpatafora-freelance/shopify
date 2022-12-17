@@ -6,8 +6,8 @@
 <ul>
 {% for i in arr %}
     {% if proid == i %}
-      {% assign prostat = battiarr[gx] %}
-          {% for j in prostat | size %}
+      {% assign prostat = battiarr[gx] | size %}
+          {% for j in prostat %}
                <li>{{ j }}</li>
           {% endfor %}
     {% endif %}
