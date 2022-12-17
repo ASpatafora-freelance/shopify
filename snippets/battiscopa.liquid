@@ -32,7 +32,7 @@ battiscopa:
 {% if product.selected_or_first_available_variant.id == product.variants[1].id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[0].id }}">
       <button>
-        Aggiungi battiscopa
+        Togli battiscopa
       </button>
   </a>
 {% endif %}
