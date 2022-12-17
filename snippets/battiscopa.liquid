@@ -22,7 +22,7 @@ battiscopa:
   {% assign gx = gx | plus: 1 %}
 {% endfor %}
 </ul>
-{% if product.selected_variant.id == product.variants[0].id %}
+{% if product.selected_variant == product.variants[0] %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[1].id }}">
       <button>
         Aggiungi battiscopa
