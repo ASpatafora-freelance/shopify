@@ -19,6 +19,8 @@ battiscopa:
           {% endfor %}
       </li>
   {% for varid in product.variants %}
+    {{ varid }}
+    {{ bx }}
   {% if bx == 0 %}
     {% if varid.id == product.selected_variant.id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ varid.id }}">
