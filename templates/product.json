@@ -44,6 +44,12 @@
             "show_dynamic_checkout": true
           }
         },
+        "12a98216-2c38-44be-8e68-f18afc5e9cdf": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<section id=\"batti\">\n<\/section>"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -100,6 +106,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "12a98216-2c38-44be-8e68-f18afc5e9cdf",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",
