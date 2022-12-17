@@ -2,10 +2,12 @@
 <h1>Questa è la sezione battiscopa</h1>
 {% include "prod-data" %}
 {% assign proid = product.title | string %}
+{% assign gx = 0 %}
 <ul>
 {% for i in arr %}
     {% if proid == i %}
-       detected 
+       {{ battiarr[gx] }}
     {% endif %}
+  {{ gx | plus: 1 }}
 {% endfor %}
 </ul>
