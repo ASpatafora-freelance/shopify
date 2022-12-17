@@ -1,3 +1,4 @@
+
 <style>
 variant-radios{
   display:none;
@@ -16,7 +17,7 @@ battiscopa:
       <li>
           {% for j in (0..prostat) %}
                {% assign para = descstat | slice: j %}
-               {% if ',' == para %}
+               {% if "," == para %}
                  </li><li>
                {% else %}
                  {{ descstat | slice: j  }}
@@ -30,7 +31,7 @@ battiscopa:
 {% if product.selected_or_first_available_variant.id == product.variants[0].id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[1].id }}">
       <button>
-        Aggiungi battiscopa edo
+        Aggiungi battiscopa
       </button>
   </a>
 {% endif %}
@@ -41,4 +42,3 @@ battiscopa:
       </button>
   </a>
 {% endif %}
-
