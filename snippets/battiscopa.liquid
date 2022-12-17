@@ -25,7 +25,7 @@ battiscopa:
 </ul>
 {{ product.selected_variant.id }}
 {% for varid in product.variants %}
-    {% if varid.id == product.selected_variant.id %}
+    {% if varid.id == product.variants[0].id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[1].id }}">
       <button>
         Aggiungi battiscopa
