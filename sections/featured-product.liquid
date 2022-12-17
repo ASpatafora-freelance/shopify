@@ -629,7 +629,9 @@
 {% endif %}
 </section>
 <script>
-document.getElementById("battiscr").innerHTML = document.getElementById("battscr").innerHTML;  
+  var edo = document.getElementById("battscr");
+  var edos = document.getElementById("battiscr");
+edos.innerHTML = edo.innerHTML;  
 </script>
 {% endif %}
 {% schema %}
