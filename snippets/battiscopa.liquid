@@ -19,6 +19,7 @@ battiscopa:
           {% endfor %}
       </li>
   {%- assign current_variant = product.selected_variant -%}
+      {{ current_variant.sku }}
   {% for varid in product.variants %}
   {% if bx == 0 %}
     {% if varid.sku == current_variant.sku %}
