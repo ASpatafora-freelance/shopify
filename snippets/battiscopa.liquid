@@ -2,7 +2,7 @@
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
 {{ product.variants }}
-{{ product.selected_variant }}
+{{ product.selected_variant.id }}
 battiscopa:
 <ul>
 {% for i in arr %}
