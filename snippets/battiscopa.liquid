@@ -4,7 +4,7 @@
 {{ product.variants }}
 {% for varid in product.variants %}
 {% if varid.id != product.selected_variant.id %}
-  {{ varid.id }}
+  {% assign variantbat = varid.id %}
 {% endif %}
 {% endfor %}
 <p>selezionata</p>
