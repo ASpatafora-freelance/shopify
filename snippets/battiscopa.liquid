@@ -3,7 +3,6 @@
 {% assign gx = 0 %}
 {% assign bx = 0 %}
 battiscopa:
-{{ product.selected_variant.id }}
 <ul>
 {% for i in arr %}
     {% if proid == i %}
@@ -23,13 +22,10 @@ battiscopa:
   {% assign gx = gx | plus: 1 %}
 {% endfor %}
 </ul>
-{{ product.selected_variant.id }}
-{% for varid in product.variants %}
-    {% if varid.id == product.variants[0].id %}
+{% if product.selected_variant.id == product.variants[0].id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[1].id }}">
       <button>
         Aggiungi battiscopa
       </button>
   </a>
-    {% endif %}
-{% endfor %}
+{% endif %}
