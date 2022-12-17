@@ -631,7 +631,12 @@
 <script>
   var edo = document.getElementById("battscr");
   var edos = document.getElementById("battiscr");
-edos.innerHTML = edo.innerHTML;  
+
+  const myTimeout = setTimeout(myStopFunction, 300);
+
+function myStopFunction() {
+ edos.innerHTML = edo.innerHTML; 
+}
 </script>
 {% endif %}
 {% schema %}
