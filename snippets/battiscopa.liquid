@@ -10,7 +10,7 @@
       {% assign descstat = battiarr[gx] %}
       {{ prostat }}
           {% for j in (1..prostat) %}
-               <li>{{ battiarr[gx][j] }}</li>
+               <li>{{ battiarr | slice: j  }}</li>
           {% endfor %}
     {% endif %}
   {% assign gx = gx | plus: 1 %}
