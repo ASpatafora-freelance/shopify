@@ -8,11 +8,9 @@
     {% if proid == i %}
       {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
-      {{ prostat }}
       <li>
           {% for j in (1..prostat) %}
                {% assign para = descstat | slice: j %}
-
                {% if ',' == para %}
                  </li><li>
                {% else %}
