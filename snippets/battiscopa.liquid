@@ -24,11 +24,24 @@ battiscopa:
           {% endfor %}
       </li>
   {% for varid in product.variants %}
+  {% if bx == 0 %}
+    {% if varid.id == product.selected_variant.id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ varid }}">
       <button>
         Aggiungi battiscopa
       </button>
   </a>
+      {% endif %}
+    {% endif %}
+    {% if bx == 1 %}
+    {% if varid.id == product.selected_variant.id %}
+  <a href="{{ request.origin }}{{ request.path }}?variant={{ varid }}">
+      <button>
+        Togli battiscopa
+      </button>
+  </a>
+      {% endif %}
+    {% endif %}
   {% endfor %}
     {% endif %}
   {% assign gx = gx | plus: 1 %}
