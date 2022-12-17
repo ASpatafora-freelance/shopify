@@ -6,7 +6,7 @@
 <ul>
 {% for i in arr %}
     {% if proid == i %}
-       {{ battiarr[gx] | slit="," }}
+       {{ battiarr[gx] | split="," }}
     {% endif %}
   <span style="display:none;">
   {{ gx | plus: 1 }}
