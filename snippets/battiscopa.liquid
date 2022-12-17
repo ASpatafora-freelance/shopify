@@ -1,3 +1,44 @@
 
-
-
+<style>
+variant-radios{
+  display:none;
+}
+</style>
+{% include "prod-data" %}
+{% assign proid = product.title | string %}
+{% assign gx = 0 %}
+{% assign bx = 0 %}
+battiscopa:
+<ul>
+{% for i in arr %}
+    {% if proid == i %}
+      {% assign prostat = battiarr[gx] | size %}
+      {% assign descstat = battiarr[gx] %}
+      <li>
+          {% for j in (0..prostat) %}
+               {% assign para = descstat | slice: j %}
+               {% if "," == para %}
+                 </li><li>
+               {% else %}
+                 {{ descstat | slice: j  }}
+               {% endif %}
+          {% endfor %}
+      </li>
+    {% endif %}
+  {% assign gx = gx | plus: 1 %}
+{% endfor %}
+</ul>
+{% if product.selected_or_first_available_variant.id == product.variants[0].id %}
+  <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[1].id }}">
+      <button>
+        Aggiungi battiscopa
+      </button>
+  </a>
+{% endif %}
+{% if product.selected_or_first_available_variant.id == product.variants[1].id %}
+  <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants[0].id }}">
+      <button>
+        Togli battiscopa
+      </button>
+  </a>
+{% endif %}
