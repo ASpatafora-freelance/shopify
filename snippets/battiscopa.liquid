@@ -3,7 +3,9 @@
 {% assign gx = 0 %}
 {{ product.variants }}
 {% for varid in product.variants %}
-{{ varid.id }}
+{% if varid.id != product.selected_variant.id %}
+  {{ varid.id }}
+{% endif %}
 {% endfor %}
 <p>selezionata</p>
 {{ product.selected_variant.id }}
