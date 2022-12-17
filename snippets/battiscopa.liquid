@@ -6,6 +6,10 @@
   {% assign variantbat = varid.id %}
 {% endif %}
 {% endfor %}
+
+{{ request.origin }}
+
+{{ request.host }}
 battiscopa:
 <ul>
 {% for i in arr %}
