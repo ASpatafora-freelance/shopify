@@ -19,56 +19,56 @@ variant-radios{
 
 {% if batti == true %}
 <section id="battscr">
-<link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 
 {%- assign product = section.settings.product -%}
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
-  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  {{ "component-product-model.css" | asset_url | stylesheet_tag }}
   <link
     id="ModelViewerStyle"
     rel="stylesheet"
     href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
     media="print"
-    onload="this.media='all'"
+    onload="this.media="all""
   >
   <link
     id="ModelViewerOverride"
     rel="stylesheet"
-    href="{{ 'component-model-viewer-ui.css' | asset_url }}"
+    href="{{ "component-model-viewer-ui.css" | asset_url }}"
     media="print"
-    onload="this.media='all'"
+    onload="this.media="all""
   >
 {%- endif -%}
 
 <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
   <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
     <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+      <div class="grid__item product__media-wrapper{% if section.settings.media_position == "right" %} medium-hide large-up-hide{% endif %}">
         <media-gallery
           id="MediaGallery-{{ section.id }}"
           role="region"
-          aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
+          aria-label="{{ "products.product.media.gallery_viewer" | t }}"
           data-desktop-layout="stacked"
         >
           <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
             {%- if product.selected_or_first_available_variant.featured_media != null -%}
               {%- assign media = product.selected_or_first_available_variant.featured_media -%}
               <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
-                {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                {% render "product-thumbnail", media: media, position: "featured", loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
               </div>
             {%- endif -%}
             {%- liquid
               assign media_to_render = product.featured_media.id
               for variant in product.variants
-                assign media_to_render = media_to_render | append: variant.featured_media.id | append: ' '
+                assign media_to_render = media_to_render | append: variant.featured_media.id | append:  " "
               endfor
             -%}
             {%- for media in product.media -%}
               {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
                 <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
-                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                  {% render "product-thumbnail", media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
                 </div>
               {%- endif -%}
             {%- endfor -%}
@@ -77,77 +77,77 @@ variant-radios{
             <button
               class="button button--full-width product__xr-button"
               type="button"
-              aria-label="{{ 'products.product.xr_button_label' | t }}"
+              aria-label="{{ "products.product.xr_button_label" | t }}"
               data-shopify-xr
               data-shopify-model3d-id="{{ first_3d_model.id }}"
               data-shopify-title="{{ product.title | escape }}"
               data-shopify-xr-hidden
             >
-              {% render 'icon-3d-model' %}
-              {{ 'products.product.xr_button' | t }}
+              {% render "icon-3d-model" %}
+              {{ "products.product.xr_button" | t }}
             </button>
           {%- endif -%}
         </media-gallery>
       </div>
       <div class="product__info-wrapper grid__item">
         <div id="ProductInfo-{{ section.id }}" class="product__info-container">
-          {%- assign product_form_id = 'product-form-' | append: section.id -%}
+          {%- assign product_form_id = "product-form-" | append: section.id -%}
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
-              {%- when '@app' -%}
+              {%- when "@app" -%}
                 {% render block %}
-              {%- when 'text' -%}
+              {%- when "text" -%}
                 <p
-                  class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text{% if block.settings.text_style == "uppercase" %} caption-with-letter-spacing{% elsif block.settings.text_style == "subtitle" %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
                 </p>
-              {%- when 'title' -%}
+              {%- when "title" -%}
                 <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                   {%- if product.title != blank -%}
                     {{ product.title | escape }}
                   {%- else -%}
-                    {{ 'onboarding.product_title' | t }}
+                    {{ "onboarding.product_title" | t }}
                   {%- endif -%}
                 </h2>
-              {%- when 'price' -%}
+              {%- when "price" -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                  {%- render "price", product: product, use_variant: true, show_badges: true, price_class: "price--large" -%}
                 </div>
                 {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
                     {%- if shop.taxes_included -%}
-                      {{ 'products.product.include_taxes' | t }}
+                      {{ "products.product.include_taxes" | t }}
                     {%- endif -%}
                     {%- if shop.shipping_policy.body != blank -%}
-                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                      {{ "products.product.shipping_policy_html" | t: link: shop.shipping_policy.url }}
                     {%- endif -%}
                   </div>
                 {%- endif -%}
                 {%- if product != blank -%}
                   <div {{ block.shopify_attributes }}>
-                    {%- form 'product', product -%}
+                    {%- form "product", product -%}
                       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                       {{ form | payment_terms }}
                     {%- endform -%}
                   </div>
                 {%- endif -%}
-              {%- when 'quantity_selector' -%}
+              {%- when "quantity_selector" -%}
                 <div
                   class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   <label class="form__label" for="Quantity-{{ section.id }}">
-                    {{ 'products.product.quantity.label' | t }}
+                    {{ "products.product.quantity.label" | t }}
                   </label>
                   <quantity-input class="quantity">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                       <span class="visually-hidden">
-                        {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                        {{- "products.product.quantity.decrease" | t: product: product.title | escape -}}
                       </span>
-                      {% render 'icon-minus' %}
+                      {% render "icon-minus" %}
                     </button>
                     <input
                       class="quantity__input"
@@ -160,22 +160,22 @@ variant-radios{
                     >
                     <button class="quantity__button no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
-                        {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                        {{- "products.product.quantity.increase" | t: product: product.title | escape -}}
                       </span>
-                      {% render 'icon-plus' %}
+                      {% render "icon-plus" %}
                     </button>
                   </quantity-input>
                 </div>              
-              {%- when 'share' -%}
-                <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+              {%- when "share" -%}
+                <script src="{{ "share.js" | asset_url }}" defer="defer"></script>
                 <share-button id="Share-{{ section.id }}" class="share-button" {{ block.shopify_attributes }}>
                   <button class="share-button__button hidden">
-                    {% render 'icon-share' %}
+                    {% render "icon-share" %}
                     {{ block.settings.share_label | escape }}
                   </button>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
                     <summary class="share-button__button">
-                      {% render 'icon-share' %}
+                      {% render "icon-share" %}
                       {{ block.settings.share_label | escape }}
                     </summary>
                     <div id="Product-share-{{ section.id }}" class="share-button__fallback motion-reduce">
@@ -187,26 +187,26 @@ variant-radios{
                           class="field__input"
                           id="url"
                           value="{{ product.selected_variant.url | default: product.url | prepend: request.origin }}"
-                          placeholder="{{ 'general.share.share_url' | t }}"
+                          placeholder="{{ "general.share.share_url" | t }}"
                           onclick="this.select();"
                           readonly
                         >
-                        <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
+                        <label class="field__label" for="url">{{ "general.share.share_url" | t }}</label>
                       </div>
                       <button class="share-button__close hidden no-js-hidden">
-                        {% render 'icon-close' %}
-                        <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
+                        {% render "icon-close" %}
+                        <span class="visually-hidden">{{ "general.share.close" | t }}</span>
                       </button>
                       <button class="share-button__copy no-js-hidden">
-                        {% render 'icon-clipboard' %}
-                        <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
+                        {% render "icon-clipboard" %}
+                        <span class="visually-hidden">{{ "general.share.copy_to_clipboard" | t }}</span>
                       </button>
                     </div>
                   </details>
                 </share-button>
-              {%- when 'variant_picker' -%}
+              {%- when "variant_picker" -%}
                 {%- unless product.has_only_default_variant -%}
-                  {%- if block.settings.picker_type == 'button' -%}
+                  {%- if block.settings.picker_type == "button" -%}
                     <variant-radios
                       class="no-js-hidden"
                       data-section="{{ section.id }}"
@@ -269,7 +269,7 @@ variant-radios{
                                 </option>
                               {%- endfor -%}
                             </select>
-                            {% render 'icon-caret' %}
+                            {% render "icon-caret" %}
                           </div>
                         </div>
                       {%- endfor -%}
@@ -284,7 +284,7 @@ variant-radios{
                 <noscript class="product-form__noscript-wrapper-{{ section.id }}">
                   <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
                     <label class="form__label" for="Variants-{{ section.id }}">
-                      {{- 'products.product.product_variants' | t -}}
+                      {{- "products.product.product_variants" | t -}}
                     </label>
                     <div class="select">
                       <select
@@ -304,16 +304,16 @@ variant-radios{
                             value="{{ variant.id }}"
                           >
                             {{ variant.title }}
-                            {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                            {%- if variant.available == false %} - {{ "products.product.sold_out" | t }}{% endif %}
                             - {{ variant.price | money | strip_html }}
                           </option>
                         {%- endfor -%}
                       </select>
-                      {% render 'icon-caret' %}
+                      {% render "icon-caret" %}
                     </div>
                   </div>
                 </noscript>
-              {%- when 'buy_buttons' -%}
+              {%- when "buy_buttons" -%}
                 <div {{ block.shopify_attributes }}>
                   {%- if product != blank -%}
                     <product-form class="product-form">
@@ -333,7 +333,7 @@ variant-radios{
                         <span class="product-form__error-message"></span>
                       </div>
 
-                      {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                      {%- form "product", product, id: product_form_id, class: "form", novalidate: "novalidate", data-type: "add-to-cart-form" -%}
                         <input
                           type="hidden"
                           name="id"
@@ -351,9 +351,9 @@ variant-radios{
                           >
                             <span>
                               {%- if product.selected_or_first_available_variant.available -%}
-                                {{ 'products.product.add_to_cart' | t }}
+                                {{ "products.product.add_to_cart" | t }}
                               {%- else -%}
-                                {{ 'products.product.sold_out' | t }}
+                                {{ "products.product.sold_out" | t }}
                               {%- endif -%}
                             </span>
                             <div class="loading-overlay__spinner hidden">
@@ -384,15 +384,15 @@ variant-radios{
                           class="product-form__submit button button--full-width button--primary"
                           disabled
                         >
-                          {{ 'products.product.sold_out' | t }}
+                          {{ "products.product.sold_out" | t }}
                         </button>
                       </div>
                     </div>
                   {%- endif -%}
                 </div>
-              {%- when 'custom_liquid' -%}
+              {%- when "custom_liquid" -%}
                 {{ block.settings.custom_liquid }}
-              {%- when 'rating' -%}
+              {%- when "rating" -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   {% liquid
                     assign rating_decimal = 0
@@ -406,7 +406,7 @@ variant-radios{
                   <div
                     class="rating"
                     role="img"
-                    aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                    aria-label="{{ "accessibility.star_reviews_info" | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
                   >
                     <span
                       aria-hidden="true"
@@ -438,30 +438,30 @@ variant-radios{
             {% endif %}
             class="link product__view-details animate-arrow"
           >
-            {{ 'products.product.view_full_details' | t }}
-            {% render 'icon-arrow' %}
+            {{ "products.product.view_full_details" | t }}
+            {% render "icon-arrow" %}
           </a>
         </div>
       </div>
-      {%- if section.settings.media_position == 'right' -%}
+      {%- if section.settings.media_position == "right" -%}
         <div class="grid__item product__media-wrapper small-hide">
           <media-gallery
             id="MediaGallery-{{ section.id }}-right"
             role="region"
-            aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
+            aria-label="{{ "products.product.media.gallery_viewer" | t }}"
             data-desktop-layout="stacked"
           >
             <div id="GalleryViewer-{{ section.id }}-right" class="product__media-list">
               {%- if product.selected_or_first_available_variant.featured_media != null -%}
                 {%- assign media = product.selected_or_first_available_variant.featured_media -%}
                 <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
-                  {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                  {% render "product-thumbnail", media: media, position: "featured", loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
                 </div>
               {%- endif -%}
               {%- for media in product.media -%}
                 {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
                   <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
-                    {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                    {% render "product-thumbnail", media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
                   </div>
                 {%- endif -%}
               {%- endfor -%}
@@ -470,14 +470,14 @@ variant-radios{
               <button
                 class="button button--full-width product__xr-button"
                 type="button"
-                aria-label="{{ 'products.product.xr_button_label' | t }}"
+                aria-label="{{ "products.product.xr_button_label" | t }}"
                 data-shopify-xr
                 data-shopify-model3d-id="{{ first_3d_model.id }}"
                 data-shopify-title="{{ product.title | escape }}"
                 data-shopify-xr-hidden
               >
-                {% render 'icon-3d-model' %}
-                {{ 'products.product.xr_button' | t }}
+                {% render "icon-3d-model" %}
+                {{ "products.product.xr_button" | t }}
               </button>
             {%- endif -%}
           </media-gallery>
@@ -488,7 +488,7 @@ variant-radios{
       <div
         class="product-media-modal__dialog"
         role="dialog"
-        aria-label="{{ 'products.modal.label' | t }}"
+        aria-label="{{ "products.modal.label" | t }}"
         aria-modal="true"
         tabindex="-1"
       >
@@ -496,21 +496,21 @@ variant-radios{
           id="ModalClose-{{ section.id }}"
           type="button"
           class="product-media-modal__toggle"
-          aria-label="{{ 'accessibility.close' | t }}"
+          aria-label="{{ "accessibility.close" | t }}"
         >
-          {% render 'icon-close' %}
+          {% render "icon-close" %}
         </button>
 
         <div
           class="product-media-modal__content color-background-1 gradient"
           role="document"
-          aria-label="{{ 'products.modal.label' | t }}"
+          aria-label="{{ "products.modal.label" | t }}"
           tabindex="0"
         >
           {%- liquid
             if product.selected_or_first_available_variant.featured_media != null
               assign media = product.selected_or_first_available_variant.featured_media
-              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+              render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
             endif
           -%}
 
@@ -523,7 +523,7 @@ variant-radios{
               endif
 
               unless media.id == product.selected_or_first_available_variant.featured_media.id
-                render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+                render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
               endunless
             -%}
           {%- endfor -%}
@@ -533,12 +533,12 @@ variant-radios{
   </div>
 </section>
 
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ "product-form.js" | asset_url }}" defer="defer"></script>
 {%- if first_3d_model -%}
   <script type="application/json" id="ProductJSON-{{ product.id }}">
-    {{ product.media | where: 'media_type', 'model' | json }}
+    {{ product.media | where: "media_type", "model" | json }}
   </script>
-  <script src="{{ 'product-model.js' | asset_url }}" defer></script>
+  <script src="{{ "product-model.js" | asset_url }}" defer></script>
 {%- endif -%}
 
 {%- liquid
@@ -595,31 +595,31 @@ variant-radios{
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function() {
     function isIE() {
       const ua = window.navigator.userAgent;
-      const msie = ua.indexOf('MSIE ');
-      const trident = ua.indexOf('Trident/');
+      const msie = ua.indexOf("MSIE ");
+      const trident = ua.indexOf("Trident/");
 
       return (msie > 0 || trident > 0);
     }
 
     if (!isIE()) return;
-    const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id"]');
-    const noScriptInputWrapper = document.createElement('div');
-    const variantSwitcher = document.querySelector('variant-radios[data-section="{{ section.id }}"]') || document.querySelector('variant-selects[data-section="{{ section.id }}"]');
-    noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-{{ section.id }}').textContent;
+    const hiddenInput = document.querySelector("#{{ product_form_id }} input[name="id"]");
+    const noScriptInputWrapper = document.createElement("div");
+    const variantSwitcher = document.querySelector("variant-radios[data-section="{{ section.id }}"]") || document.querySelector("variant-selects[data-section="{{ section.id }}"]");
+    noScriptInputWrapper.innerHTML = document.querySelector(".product-form__noscript-wrapper-{{ section.id }}").textContent;
     variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-    document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function(event) {
+    document.querySelector("#Variants-{{ section.id }}").addEventListener("change", function(event) {
       hiddenInput.value = event.currentTarget.value;
     });
   });
 </script>
 
 {% if product.media.size > 0 %}
-  <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ "product-modal.js" | asset_url }}" defer="defer"></script>
+  <script src="{{ "media-gallery.js" | asset_url }}" defer="defer"></script>
 {% endif %}
 </section>
 <script>
