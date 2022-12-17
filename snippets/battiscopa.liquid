@@ -9,7 +9,7 @@
       {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
       <li>
-          {% for j in (1..prostat) %}
+          {% for j in (0..prostat) %}
                {% assign para = descstat | slice: j %}
                {% if ',' == para %}
                  </li><li>
