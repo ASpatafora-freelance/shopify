@@ -20,7 +20,7 @@ battiscopa:
       </li>
   {% for varid in product.variants %}
   {% if bx == 0 %}
-    {% if varid.id != product.selected_variant.id %}
+    {% if varid.id == product.selected_variant.id %}
   <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants.id[1] }}">
       <button>
         Aggiungi battiscopa
@@ -29,8 +29,8 @@ battiscopa:
       {% endif %}
     {% endif %}
     {% if bx == 1 %}
-    {% if varid.id != product.selected_variant.id %}
-  <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants.id[1] }}">
+    {% if varid.id == product.selected_variant.id %}
+  <a href="{{ request.origin }}{{ request.path }}?variant={{ product.variants.id[0] }}">
       <button>
         Togli battiscopa
       </button>
