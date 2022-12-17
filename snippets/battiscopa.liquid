@@ -9,9 +9,17 @@
       {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
       {{ prostat }}
+      <li>
           {% for j in (1..prostat) %}
-               <li>{{ descstat | slice: j  }}</li>
+               {% assign para = descstat | slice: j %}
+
+               {% if ',' == para %}
+                 </li><li>
+               {% else %}
+                 {{ descstat | slice: j  }}
+               {% endif %}
           {% endfor %}
+      </li>
     {% endif %}
   {% assign gx = gx | plus: 1 %}
 {% endfor %}
