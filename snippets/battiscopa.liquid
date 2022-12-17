@@ -7,7 +7,10 @@
 {% for i in arr %}
     {% if proid == i %}
       {% assign prostat = battiarr[gx] %}
-      {{ prostat }}
+      {% assign prostat = prostat | split="," %}
+          {% for j in prostat %}
+               <li>{{ j }}</li>
+          {% endfor %}
     {% endif %}
   {% assign gx = gx | plus: 1 %}
 {% endfor %}
