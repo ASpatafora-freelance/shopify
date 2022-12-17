@@ -8,12 +8,13 @@ variant-radios{
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
 {% assign bx = 0 %}
-battiscopa:
-<ul>
+
 {% for i in arr %}
     {% if proid == i %}
       {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
+      battiscopa:
+<ul>
       <li>
           {% for j in (0..prostat) %}
                {% assign para = descstat | slice: j %}
