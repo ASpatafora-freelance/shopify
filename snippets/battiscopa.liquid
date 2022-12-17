@@ -7,7 +7,8 @@
 {% for i in arr %}
     {% if proid == i %}
       {% assign prostat = battiarr[gx] | size %}
-          {% for j in prostat %}
+      {{ prostat }}
+          {% for j in (1..prostat) %}
                <li>{{ j }}</li>
           {% endfor %}
     {% endif %}
