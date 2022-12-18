@@ -84,6 +84,19 @@ label {
     {% if proid == i %}
 
         {% assign batti = true %}
+
+        {% assign prostat = battiarr[gx] | size %}
+      {% assign descstat = battiarr[gx] %}
+      <li>
+          {% for j in (0..prostat) %}
+               {% assign para = descstat | slice: j %}
+               {% if "," == para %}
+                 </li><li>
+               {% else %}
+                 {{ descstat | slice: j  }}
+               {% endif %}
+          {% endfor %}
+      </li>
   
     {% endif %}
   {% assign gx = gx | plus: 1 %}
