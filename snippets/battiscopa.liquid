@@ -100,6 +100,9 @@ label {
 #product-form-template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6{
   width: fit-content;
 }
+product-form{
+  width: fit-content;
+}
 </style>
 {% include "prod-data" %}
 {% assign proid = product.title | string %}
@@ -230,7 +233,7 @@ label {
                   </quantity-input>
                 </div>              
               {%- when "buy_buttons" -%}
-                <div {{ block.shopify_attributes }}>
+                <div {{ block.shopify_attributes }} style="width: fit-content;">
                   {%- if product != blank -%}
                     <product-form class="product-form">
                       <div class="product-form__error-message-wrapper" role="alert" hidden>
