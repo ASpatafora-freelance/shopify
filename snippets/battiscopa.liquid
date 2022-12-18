@@ -167,7 +167,7 @@ variant-radios{
                     </button>
                   </quantity-input>
                 </div>              
-              {%- when "share" -%}
+              {% comment %}{%- when "share" -%}
                 <script src="{{ "share.js" | asset_url }}" defer="defer"></script>
                 <share-button id="Share-{{ section.id }}" class="share-button" {{ block.shopify_attributes }}>
                   <button class="share-button__button hidden">
@@ -313,7 +313,7 @@ variant-radios{
                       {% render "icon-caret" %}
                     </div>
                   </div>
-                </noscript>
+                </noscript>{% endcomment %}
               {%- when "buy_buttons" -%}
                 <div {{ block.shopify_attributes }}>
                   {%- if product != blank -%}
