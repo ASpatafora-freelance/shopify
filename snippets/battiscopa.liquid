@@ -391,6 +391,8 @@ variant-radios{
                     </div>
                   {%- endif -%}
                 </div>
+
+              {% comment %}
               {%- when "custom_liquid" -%}
                 {{ block.settings.custom_liquid }}
               {%- when "rating" -%}
@@ -428,8 +430,8 @@ variant-radios{
                       {{ "accessibility.total_reviews" | t -}}
                     </span>
                   </p>
-                {%- endif -%}
-            {%- endcase -%}
+                {%- endif -%}{% endcomment %}
+            {%- endcase -%}           
           {%- endfor -%}
           <a
             {% if product == blank %}
