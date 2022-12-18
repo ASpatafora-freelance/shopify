@@ -62,6 +62,20 @@ variant-radios{
   
   <div id="battiscopacontainer" class="clearfix">
   <h4 class="battiscopatitle"><b>Desideri aggiungere il battiscopa?</b></h4>
+  <div class="battiscopamain">
+            <div class="battiscopaname">AXIS BATTISCOPA OAK 6X60<br>(Ogni scatola contiene 9.00ml)</div>
+            <div class="battiscopaform">
+                <label>Perimetro della stanza: </label>
+                <input id="battpzconf" type="hidden" value="9.00">
+                <input id="battid" type="hidden" value="3957">
+                <input id="battprice" type="hidden" value="152.145001">
+                <div class="mt"><input id="perimetro" type="number" value="9.00" min="9.00" placeholder=".00" step="9.00"></div>
+            </div>
+            <div class="battiscopasub">
+                <span class="btn-battiscopa"><i class="material-icons">shopping_cart</i> Aggiungi</span>
+            </div>
+            <div id="batttotal"></div>
+        </div>
   
           {%- assign product_form_id = "product-form-" | append: section.id -%}
 
