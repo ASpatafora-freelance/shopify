@@ -1,130 +1,13 @@
 
 
-
 <style>
 variant-radios{
   display:none;
 }
-#battiscopacontainer {
-    border: 2px solid #D76445;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-.battiscopatitle {
-    padding: 0 15px;
-    color: #272727;
-}
-.battiscopamain {
-    float: left;
-    padding: 5px 20px 0;
-}
-.battiscopaname {
-    margin-bottom: 5px;
-}
-.battiscopaform {
-    margin-right: 10px;
-    float: left;
-    line-height: 22px;
-}
-.battiscopaform label {
-    margin: 0;
-}
-label {
-    color: #000000;
-    text-align: right;
-    font-size: 13px;
-    font-weight: 500;
-}
-.battiscopasub {
-    margin-right: 10px;
-}
-#battiscopacontainer .product-form__buttons .product-form__submit{
-    width: fit-content;
-    min-height: fit-content;
-    font-size: 13px;
-    color: #fff;
-    background: #272727;
-    letter-spacing: 1px;
-    font-weight: 600;
-    padding: 0.62rem 1.1rem;
-  transform:translateY(0px);
-    text-transform: uppercase;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-.btn-battiscopa {
-    font-size: 12px;
-    color: #fff;
-    background: #272727;
-    letter-spacing: 1px;
-    font-weight: 600;
-    padding: 0.2rem 0.4rem;
-    text-transform: uppercase;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-  .quantity{
-        min-height: fit-content;
-    font-size: 13px;
-    padding: 0.6rem;
-  }
-.material-icons {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 14px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 1em;
-    height: 1em;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "liga";
-}
-.btn-battiscopa .material-icons {
-    font-size: 14px;
-}
-#product-form-template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6{
-  width: fit-content;
-}
-product-form{
-  width: fit-content;
-      margin: 9px 0 0!important;
-}
-.product--no-media .product-form {
-      margin: 9px 0 0;
-}
-  #qtnftr .product-form__input {  
-    width: fit-content;
-    max-width: fit-content;
-        height: fit-content;
-    margin: 9px 0 0;
-  }
-  #qtnftr{
-    display: flex;
-    flex-wrap: wrap;
-        justify-content: space-evenly;
-  }
 </style>
 {% include "prod-data" %}
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
-{% assign batti = false %}
 {% assign batti = false %}
 {% for i in arr %}
     {% if proid == i %}
@@ -165,40 +48,7 @@ product-form{
     <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
   
       <div class="product__info-wrapper grid__item">
-  
         <div id="ProductInfo-{{ section.id }}" class="product__info-container">
-  
-  <div id="battiscopacontainer" class="clearfix">
-  <h4 class="battiscopatitle"><b>Desideri aggiungere il battiscopa?</b></h4>
-  <div class="battiscopamain">
-            <div class="battiscopaname">{{ product.title }}
-  <br>
-  {% assign firsty = 0 %}
-  {% assign gx = 0 %}
-  {% for i in arr %}
-    {% if proid == i %}
-
-        {% assign batti = true %}
-
-        {% assign prostat = battiarr[gx] | size %}
-      {% assign descstat = battiarr[gx] %}
-          {% for j in (0..prostat) %}
-               {% assign para = descstat | slice: j %}
-               {% if "," == para %}
-                 {% assign firsty = firsty | plus: 1 %}
-               {% else %}
-                 {% if firsty == 1 %}
-                 {{ descstat | slice: j  }}
-                 {% endif %}
-               {% endif %}
-          {% endfor %}
-  
-    {% endif %}
-  {% assign gx = gx | plus: 1 %}
-{% endfor %}
-  </div>
-        </div>
-  
           {%- assign product_form_id = "product-form-" | append: section.id -%}
 
           {%- for block in section.blocks -%}
@@ -227,12 +77,14 @@ product-form{
                     {%- endform -%}
                   </div>
                 {%- endif -%}
-              <div id="qtnftr">
               {%- when "quantity_selector" -%}
                 <div
                   class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                   {{ block.shopify_attributes }}
                 >
+                  <label class="form__label" for="Quantity-{{ section.id }}">
+                    {{ "products.product.quantity.label" | t }}
+                  </label>
                   <quantity-input class="quantity">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                       <span class="visually-hidden">
@@ -258,7 +110,7 @@ product-form{
                   </quantity-input>
                 </div>              
               {%- when "buy_buttons" -%}
-                <div {{ block.shopify_attributes }} style="width: fit-content;">
+                <div {{ block.shopify_attributes }}>
                   {%- if product != blank -%}
                     <product-form class="product-form">
                       <div class="product-form__error-message-wrapper" role="alert" hidden>
@@ -330,8 +182,6 @@ product-form{
                       </div>
                     </div>
                   {%- endif -%}
-                          </div>
-                          </div>
                 </div>
             {%- endcase -%}           
           {%- endfor -%}
