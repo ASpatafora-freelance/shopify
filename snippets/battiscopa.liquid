@@ -98,21 +98,6 @@ variant-radios{
             {%- case block.type -%}
               {%- when "@app" -%}
                 {% render block %}
-              {% comment %}{%- when "text" -%}
-                <p
-                  class="product__text{% if block.settings.text_style == "uppercase" %} caption-with-letter-spacing{% elsif block.settings.text_style == "subtitle" %} subtitle{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{- block.settings.text -}}
-                </p>
-              {%- when "title" -%}
-                <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-                  {%- if product.title != blank -%}
-                    {{ product.title | escape }}
-                  {%- else -%}
-                    {{ "onboarding.product_title" | t }}
-                  {%- endif -%}
-                </h2>{% endcomment %}
               {%- when "price" -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render "price", product: product, use_variant: true, show_badges: true, price_class: "price--large" -%}
