@@ -33,13 +33,13 @@
 {% assign proidsp = product.title | string %}
 {% assign gxsp = 0 %}
 {% assign gxsps = 0 %}
-{% assign spc = false %}
+{% assign spc = false %}<p>{{ product.title }}<br/>
 {% for i in arrsp %}
     {% if proidsp == i %}
 
         {% for j in sparr %}
           {% if gxsps == gxsp %}
-            <p>
+            
              {% assign arri = j | split: "," %}
              {% for z in arri %}
                  {{ z }}<br/>
