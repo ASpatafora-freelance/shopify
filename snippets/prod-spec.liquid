@@ -4,4 +4,14 @@
 <div style="display:none;">
 {{ arr | json }}
 </div>
-{{ product.title }}
+{% assign proidsp = product.title | string %}
+{% assign gxsp = 0 %}
+{% assign spc = false %}
+{% for i in arrsp %}
+    {% if proidsp == i %}
+
+        {% assign spc = true %}
+  
+    {% endif %}
+  {% assign gxsp = gxsp | plus: 1 %}
+{% endfor %}
