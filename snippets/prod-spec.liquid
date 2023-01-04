@@ -5,8 +5,8 @@
 {{ arr | json }}
 </div>
 <section style="display:flex;flex-wrap:wrao;">
-<div style="width:50%;">
-<p>
+<div style="width:50%;padding-right:4px;">
+<p style="">
   Titolo:<br/>
   Produttore:<br/>
   Codice:prodotto:<br/>
@@ -28,6 +28,7 @@
   Pezzi per scatola:<br/>
 </p>
 </div>
+  <div style="width:50%;padding-left:4px;">
 {% assign proidsp = product.title | string %}
 {% assign gxsp = 0 %}
 {% assign gxsps = 0 %}
@@ -53,5 +54,6 @@
   {% assign gxsp = gxsp | plus: 1 %}
   {% assign gxsps = 0 %}
 {% endfor %}
+  </div>
 
 </section>
