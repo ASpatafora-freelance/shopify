@@ -4,7 +4,30 @@
 <div style="display:none;">
 {{ arr | json }}
 </div>
-<section></section>
+<section style="display:flex;flex-wrap:wrao;">
+<div style="width:50%;">
+<p>
+  Titolo:<br/>
+  Produttore:<br/>
+  Codice:prodotto:<br/>
+  Scelta:<br/>
+  Materiale:<br/>
+  Finitura:<br/>
+  Effetto:<br/>
+  Stonalizzazione:<br/>
+  Forma:<br/>
+  Formato:<br/>
+  Spessore:<br/>
+  Prezzo per scatola:<br/>
+  Prezzo al metro quadro:<br/>
+  Peso al pallet:<br/>
+  Mq al pallet:<br/>
+  Scatole per pallet:<br/>
+  Mq per scatola:<br/>
+  Peso per scatola:<br/>
+  Pezzi per scatola:<br/>
+</p>
+</div>
 {% assign proidsp = product.title | string %}
 {% assign gxsp = 0 %}
 {% assign gxsps = 0 %}
@@ -29,7 +52,4 @@
   {% assign gxsps = 0 %}
 {% endfor %}
 
-
-{% if spc == true %}
-
-{% endif %}
+</section>
