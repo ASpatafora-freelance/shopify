@@ -12,7 +12,9 @@
     {% if proidsp == i %}
 
         {% for j in sparr %}
-          
+          {% if gxsps == gxsp %}
+             {% assign arri = j | split: "," %}
+          {% endif %}
           {% assign gxsps = gxsps | plus: 1 %}
         {% endfor %}  
       
