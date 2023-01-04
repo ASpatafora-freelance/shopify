@@ -15,7 +15,7 @@
           {% if gxsps == gxsp %}
              {% assign arri = j | split: "," %}
              {% for z in arri %}
-                 {{ z }}
+                 <br/>{{ z }}
              {% endfor %}  
           {% endif %}
           {% assign gxsps = gxsps | plus: 1 %}
