@@ -191,6 +191,11 @@
         "padding_bottom": 36
       }
     },
+    "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
+      "type": "specifiche",
+      "settings": {
+      }
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -290,6 +295,7 @@
   "order": [
     "main",
     "787ab4c8-9092-4b7d-8666-e469be744bb6",
+    "3c620ab0-1ee8-478c-9d49-c44e397d8186",
     "image-with-text",
     "multicolumn",
     "product-recommendations"
