@@ -37,10 +37,12 @@
 
         {% for j in sparr %}
           {% if gxsps == gxsp %}
+            <p>
              {% assign arri = j | split: "," %}
              {% for z in arri %}
-                 <br/>{{ z }}
+                 {{ z }}<br/>
              {% endfor %}  
+            </p>
           {% endif %}
           {% assign gxsps = gxsps | plus: 1 %}
         {% endfor %}  
