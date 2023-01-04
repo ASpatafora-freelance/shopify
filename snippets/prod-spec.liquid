@@ -1,9 +1,19 @@
 
-{% assign arr = ";piastrelle" | split: ";" %}
-{% assign battiarr = ";,,,,,,,,,,,,,,,,,w" | split: ";" %}
+{% assign arrsp = ";piastrelle;Ceramiche" | split: ";" %}
+{% assign sparr = ";,,,,,,,,,,,,,,,,,w;c,,,,,,,,,,,,,,,,,c" | split: ";" %}
 <div style="display:none;">
 {{ arr | json }}
 </div>
+{% assign proidsp = product.title | string %}
+{% assign spc = false %}
+{% for i in arrsp %}
+    {% if proidsp == i %}
+      
+        {% assign spc = true %}
+  
+    {% endif %}
+{% endfor %}
+{% if spc == true %}
 <h2 style="margin-left:14%;">Specifice</h2>
 <section style="display:flex;flex-wrap:wrao;">
 <div style="width:50%;padding-right:2px;">
@@ -58,3 +68,4 @@
   </div>
 
 </section>
+{% endif %}
