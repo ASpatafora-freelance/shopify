@@ -209,6 +209,11 @@
         "padding_bottom": 36
       }
     },
+    "3a045c24-1e92-4291-bf39-e624b74c6b63": {
+      "type": "specifiche",
+      "settings": {
+      }
+    },
     "1664798198aab43a0a": {
       "type": "prova-sez",
       "settings": {
@@ -241,6 +246,7 @@
     "collage",
     "video",
     "multicolumn",
+    "3a045c24-1e92-4291-bf39-e624b74c6b63",
     "1664798198aab43a0a",
     "1664798433510c3ddd",
     "166490726900617825"
