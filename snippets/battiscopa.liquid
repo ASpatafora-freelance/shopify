@@ -139,7 +139,8 @@ product-form{
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 
-{%- assign product = 'battiscopa' -%}
+{%- assign product = section.settings.product -%}
+  {{ section.settings.product }}
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
   {{ "component-product-model.css" | asset_url | stylesheet_tag }}
