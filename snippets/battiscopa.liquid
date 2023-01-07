@@ -140,9 +140,11 @@ product-form{
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 
 {% for producte in collections.battiscopa.products %}
-  {% if producte.title == 'battiscopa2es' %}
+  {% for t in battipo %}
+  {% if producte.title == t %}
     {%- assign product = producte -%}
-    {% endif %}
+  {% endif %}
+  {% endfor %}
 {% endfor %}
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
