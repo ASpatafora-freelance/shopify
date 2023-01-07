@@ -141,12 +141,14 @@ product-form{
 
 {{ section.settings.product.title }}
   
-{% for producte in collections.battiscopa.products %}
+{% assign gxs = 0 %}
   {% for t in battipo %}
-  {% if producte.title == t %}
+  {% for producte in collections.battiscopa.products %}
+  {% if producte.title == t and gxs == gx %}
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
+    {% assign gxs = gxs | plus: 1 %}
 {% endfor %}
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
