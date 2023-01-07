@@ -139,6 +139,8 @@ product-form{
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 
+{{ section.settings.product.title }}
+  
 {% for producte in collections.battiscopa.products %}
   {% for t in battipo %}
   {% if producte.title == t %}
