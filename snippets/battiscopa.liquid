@@ -139,12 +139,11 @@ product-form{
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 
-{{ section.settings.product.title }}
-  
 {% assign gxs = 0 %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
   {% if producte.title == t and gxs == gx %}
+    {{ t }}
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
