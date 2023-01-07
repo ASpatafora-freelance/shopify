@@ -139,6 +139,10 @@ product-form{
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 
+{% for product in collections.some-handle.products %}
+  <p>{{ product.title }}</p>
+{% endfor %}
+  
 {%- assign product = section.settings.product -%}
   {{ section.settings.product }}
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
