@@ -132,7 +132,9 @@ product-form{
         {% assign batti = true %}
   
     {% endif %}
+  {% if batti == false %}
   {% assign gx = gx | plus: 1 %}
+    {% endif %}
 {% endfor %}
 
 {% if batti == true %}
