@@ -10,6 +10,14 @@
   
     {% endif %}
 {% endfor %}
+{% for i in arrsp %}
+  {% for coll in product.collections %}
+{% if i == coll.title %}
+
+        {% assign spc = true %}
+    {% endif %}
+{% endfor %}
+{% endfor %}
 {% if spc == true %}
 <h2 style="margin-left:14%;">Specifice</h2>
 <section style="display:flex;flex-wrap:wrao;">
