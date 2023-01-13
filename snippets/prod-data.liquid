@@ -1,6 +1,7 @@
 
-{% assign arr = ";Ceramiche" | split: ";" %}
-{% assign battiarr = ";0,Descrivi l\'oggetto,0,0" | split: ";" %}
+{% assign battipo = ";battiscopa2es;battiscopa2es" | split: ";" %}
+{% assign arr = ";Ceramiche;container" | split: ";" %}
+{% assign battiarr = ";0,Descrivi l\\\'oggetto,0,0;,Descrivi l\'oggetto,," | split: ";" %}
 <div style="display:none;">
 {{ arr | json }}
 </div>
