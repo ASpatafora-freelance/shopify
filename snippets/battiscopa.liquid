@@ -125,7 +125,6 @@ product-form{
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
 {% assign batti = false %}
-{% assign batti = false %}
 {% for i in arr %}
     {% if proid == i %}
 
@@ -136,8 +135,18 @@ product-form{
   {% assign gx = gx | plus: 1 %}
     {% endif %}
 {% endfor %}
-{% for coll in product.collections %}
-{{ coll.title }}
+{% assign gxd = 0 %}
+{% for i in arr %}
+  {% for coll in product.collections %}
+{% if i == coll.title %}
+
+        {% assign batti = true %}
+  {% assign gx = gxd %}
+    {% endif %}
+{% endfor %}
+  {% if batti == false %}
+  {% assign gxd = gxd | plus: 1 %}
+    {% endif %}
 {% endfor %}
 
 {% if batti == true %}
