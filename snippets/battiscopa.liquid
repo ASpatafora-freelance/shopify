@@ -169,7 +169,7 @@ product-form{
   {% endfor %}
     {% assign gxs = gxs | plus: 1 %}
 {% endfor %}
-  {{ product }}
+  {{ product.title }}
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
   {{ "component-product-model.css" | asset_url | stylesheet_tag }}
