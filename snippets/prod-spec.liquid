@@ -1,10 +1,15 @@
 
-{% assign arrsp = ";Waterfall Dark 30x60" | split: ";" %}
+{% assign arrsp = ";Waterfall Dark" | split: ";" %}
 {% assign sparr = ";,,,,,,,,,,,,,,,,,w" | split: ";" %}
 {% assign proidsps = product.title | string %}
 {% assign spc = false %}
 {% for i in arrsp %}
     {% if proidsps == i %}
+      
+        {% assign spc = true %}
+  
+    {% endif %}
+  {% if proidsps == i %}
       
         {% assign spc = true %}
   
