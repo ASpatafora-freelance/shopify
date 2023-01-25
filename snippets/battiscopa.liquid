@@ -165,7 +165,7 @@ product-form{
     {{ producte.title }}<br/>
     {{ t }}<br/>
     {{ gx }}<=>{{ gxs }}
-  {% if producte.title == t and gxs >= gx %}
+  {% if producte.title == t and gxs >= gx and gxs <= gx %}
     {{ producte.title }}<br/>
     {%- assign product = producte -%}
   {% endif %}
