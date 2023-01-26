@@ -475,10 +475,17 @@ product-form{
   var buto = document.getElementsByClassName("quantity__button");
   var sume = 1;
   for(let j = 0; j <= buto.length; j++){
+  if(j == 1){
+  buto[j].addEventListener('click', function(){
+     sume = parseInt(quant.value) - 1;
+     console.log(sume);
+  });
+  }else{
   buto[j].addEventListener('click', function(){
      sume = 1 + parseInt(quant.value);
      console.log(sume);
   });
+  }
   }
   </script>
 
