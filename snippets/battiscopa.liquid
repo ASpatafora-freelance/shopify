@@ -222,8 +222,7 @@ product-form{
   
     {% endif %}
   {% assign gx = gx | plus: 1 %}
-{% endfor %}<br/>
-  
+{% endfor %}
 <div id="contml">7ml</div>
   </div>
         </div>
@@ -583,33 +582,3 @@ product-form{
 </script>
 {% endif %}
 
-{% comment %}							
-<style>
-variant-radios{
-  display:none;
-}
-</style>
-{% include "prod-data" %}
-{% assign proid = product.title | string %}
-{% assign gx = 0 %}
-battiscopa:
-<ul>
-{% for i in arr %}
-    {% if proid == i %}
-      {% assign prostat = battiarr[gx] | size %}
-      {% assign descstat = battiarr[gx] %}
-      <li>
-          {% for j in (0..prostat) %}
-               {% assign para = descstat | slice: j %}
-               {% if "," == para %}
-                 </li><li>
-               {% else %}
-                 {{ descstat | slice: j  }}
-               {% endif %}
-          {% endfor %}
-      </li>
-    {% endif %}
-  {% assign gx = gx | plus: 1 %}
-{% endfor %}
-</ul>
-{% endcomment %}
