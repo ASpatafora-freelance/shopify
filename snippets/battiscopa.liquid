@@ -163,7 +163,7 @@ product-form{
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
   {% if producte.title == t and gx <= gxs %}
-    {% if gx > gsx %}
+    {% if gx >= gsx %}
     {%- assign product = producte -%}
       {% endif %}
   {% endif %}
