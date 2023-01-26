@@ -480,12 +480,12 @@ product-form{
   if(j == 0){
   buto[j].addEventListener('click', function(){
      sume = parseInt(quant.value) - 1;
-     console.log(sume);
+     document.getElementById("contml").innerHTML = sume+'ml';
   });
   }else{
   buto[j].addEventListener('click', function(){
      sume = 1 + parseInt(quant.value);
-     console.log(sume);
+     document.getElementById("contml").innerHTML = sume+'ml';
   });
   }
   }
