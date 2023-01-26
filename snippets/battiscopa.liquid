@@ -482,12 +482,18 @@ product-form{
   buto[j].addEventListener('click', function(){
      sume = parseInt(quant.value) - 1;
      sumes = sume * 7;
+  if(sumes < 7){
+  sumes = 7;
+  }
      document.getElementById("contml").innerHTML = sumes+'ml';
   });
   }else{
   buto[j].addEventListener('click', function(){
      sume = 1 + parseInt(quant.value);
      sumes = sume * 7;
+  if(sumes < 7){
+  sumes = 7;
+  }
      document.getElementById("contml").innerHTML = sumes+'ml';
   });
   }
