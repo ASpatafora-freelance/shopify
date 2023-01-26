@@ -476,16 +476,19 @@ product-form{
   var quant = document.getElementById("Quantity-template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6");
   var buto = conter.getElementsByClassName("quantity__button");
   var sume = 1;
+  var sumes = 0;
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener('click', function(){
      sume = parseInt(quant.value) - 1;
-     document.getElementById("contml").innerHTML = sume+'ml';
+     sumes = sume * 7;
+     document.getElementById("contml").innerHTML = sumes+'ml';
   });
   }else{
   buto[j].addEventListener('click', function(){
      sume = 1 + parseInt(quant.value);
-     document.getElementById("contml").innerHTML = sume+'ml';
+     sumes = sume * 7;
+     document.getElementById("contml").innerHTML = sumes+'ml';
   });
   }
   }
