@@ -473,9 +473,11 @@ product-form{
   <script type="text/javascript">
   var quant = document.getElementById("Quantity-template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6");
   var buto = document.getElementsByClassName("quantity__button");
+  var sume = 1;
   for(let j = 0; j <= buto.length; j++){
   buto[j].addEventListener('click', function(){
-     console.log(quant.value+1);
+     sume = 1 + parseInt(quant.value);
+     console.log(sume);
   });
   }
   </script>
