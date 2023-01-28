@@ -139,7 +139,9 @@ product-form{
     {% if product.title contains nedr %}
       {% assign batti = true %}
   {% else %}
+      {% if batti != true %}
       {% assign batti = false %}
+        {% endif %}
     {% endif %}
   {% endfor %}
   {% if product.title contains i %}
