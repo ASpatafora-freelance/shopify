@@ -468,22 +468,24 @@ product-form{
   var buto = conter.getElementsByClassName("quantity__button");
   var sume = 1;
   var sumes = 0;
+  var rt = document.getElementById("contml").innerHTML;
+  rt = Number(rt);
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener('click', function(){
      sume = parseInt(quant.value) - 1;
-     sumes = sume * 7;
-  if(sumes < 7){
-  sumes = 7;
+     sumes = sume * rt;
+  if(sumes < rt){
+  sumes = rt;
   }
      document.getElementById("contml").innerHTML = sumes+'ml';
   });
   }else{
   buto[j].addEventListener('click', function(){
      sume = 1 + parseInt(quant.value);
-     sumes = sume * 7;
-  if(sumes < 7){
-  sumes = 7;
+     sumes = sume * rt;
+  if(sumes < rt){
+  sumes = rt;
   }
      document.getElementById("contml").innerHTML = sumes+'ml';
   });
