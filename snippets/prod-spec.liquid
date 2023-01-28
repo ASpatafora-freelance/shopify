@@ -9,11 +9,14 @@
         {% assign spc = true %}
   
     {% endif %}
-  {% if proidsps contains i %}
-      
-        {% assign spc = true %}
-  
-    {% endif %}
+  {% assign edr = i | split: " " %}  
+  {% for nedr in edr %}
+  {% if proidsps contains nedr %}
+      {% assign spcx = true %}
+  {% else %}
+      {% assign spcx = false %}
+  {% endif %}
+  {% endfor %}
 {% endfor %}
 {% for i in arrsp %}
   {% for coll in product.collections %}
