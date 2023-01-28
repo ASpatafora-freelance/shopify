@@ -127,6 +127,7 @@ product-form{
 {% include "prod-data" %}
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
+{% assign gxx = 0 %}
 {% assign batti = false %}
 {% assign battie = false %}
 {% for i in arr %}
@@ -144,8 +145,11 @@ product-form{
         {% assign batti = true %}
   
     {% endif %}
-  {% if batti == false and battie == false %}
+  {% if batti == false %}
   {% assign gx = gx | plus: 1 %}
+    {% endif %}
+  {% if  battie == false %}
+  {% assign gxx = gxx | plus: 1 %}
     {% endif %}
 {% endfor %}
 {% assign rtr = gx %}
