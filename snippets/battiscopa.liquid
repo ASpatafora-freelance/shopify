@@ -215,7 +215,7 @@ product-form{
   {% for i in arr %}
     {% if proid == i %}
 
-        {% assign batti = true %}
+        {% assign battie = true %}
       
       {% assign prostate = prostatarr[gx] | split: "," %}
       Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
@@ -230,13 +230,13 @@ product-form{
       {% assign battie = false %}
     {% endif %}
   {% endfor %}
-    {% if batti == false or battie == false %}
+    {% if battie == false %}
   {% assign gx = gx | plus: 1 %}
       {% endif %}
 {% endfor %}
   {% if batti == true %}
       
-      {% assign prostate = prostatarr[etfr] | split: "," %}
+      {% assign prostate = prostatarr[rtr] | split: "," %}
       Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
   
     {% endif %}
