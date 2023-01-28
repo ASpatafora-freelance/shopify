@@ -128,14 +128,15 @@ product-form{
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
 {% assign batti = false %}
+{% assign battie = false %}
 {% for i in arr %}
     
   {% assign edr = i | split: " " %}  
   {% for nedr in edr %}
     {% if product.title contains nedr %}
-      {% assign batti = true %}
+      {% assign battie = true %}
   {% else %}
-      {% assign batti = false %}
+      {% assign battie = false %}
     {% endif %}
   {% endfor %}
   {% if proid == i %}
@@ -143,7 +144,7 @@ product-form{
         {% assign batti = true %}
   
     {% endif %}
-  {% if batti == false %}
+  {% if batti == false or battie == true %}
   {% assign gx = gx | plus: 1 %}
     {% endif %}
 {% endfor %}
@@ -162,7 +163,7 @@ product-form{
     {% endif %}
 {% endfor %}
 
-{% if batti == true %}
+{% if batti == true or battie == true %}
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 {% include "prod-data" %}
@@ -209,7 +210,7 @@ product-form{
   <br>
 
   {% assign prostatarr = battiarr %}
-  {% if batti == true %}
+  {% if batti == true or battie == true %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
       Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
