@@ -470,6 +470,7 @@ product-form{
   var sumes = 0;
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
+  document.getElementById("contml").innerHTML = rt + 'ml';
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener('click', function(){
