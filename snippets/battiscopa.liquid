@@ -223,6 +223,32 @@ product-form{
     {% endif %}
   {% assign gx = gx | plus: 1 %}
 {% endfor %}
+
+  
+  {% assign firsty = 0 %}
+  {% assign gx = 0 %}
+  {% assign prostatarr = battiarr | split: ";" %}
+  {% for i in arr %}
+    {% if proid == i %}
+
+        {% assign batti = true %}
+{{ prostatarr[gx] }}
+        {% assign prostat = battiarr[gx] | size %}
+      {% assign descstat = battiarr[gx] %}
+          {% for j in (0..prostat) %}
+               {% assign para = descstat | slice: j %}
+               {% if "," == para %}
+                 {% assign firsty = firsty | plus: 1 %}
+               {% else %}
+                 {% if firsty == 1 %}
+                 {{ descstat | slice: j  }}
+                 {% endif %}
+               {% endif %}
+          {% endfor %}
+  
+    {% endif %}
+  {% assign gx = gx | plus: 1 %}
+{% endfor %}
 <div id="contml">7ml</div>
   </div>
         </div>
