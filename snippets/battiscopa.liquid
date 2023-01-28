@@ -210,7 +210,7 @@ product-form{
 
         {% assign batti = true %}
       
-      {% assign prostate = prostatarr[1] | split: "," %}
+      {% assign prostate = prostatarr[gx] | split: "," %}
       {{ prostate }}
         {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
