@@ -134,6 +134,13 @@ product-form{
         {% assign batti = true %}
   
     {% endif %}
+  {% assign edr = i | split: " " %}
+  {% for nedr in edr %}
+    {% if product.title contains nedr %}
+      {% assign batti = true %}
+  
+    {% endif %}
+  {% endfor %}
   {% if product.title contains i %}
       
     {% comment %}    {% assign batti = true %}{% endcomment %}
