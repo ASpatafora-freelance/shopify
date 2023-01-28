@@ -232,7 +232,9 @@ product-form{
     {% if proid == i %}
 
         {% assign batti = true %}
-{{ prostatarr }}
+      
+      {% assign prostate = prostatarr[gx] %}
+      {{ prostate }}
         {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
           {% for j in (0..prostat) %}
