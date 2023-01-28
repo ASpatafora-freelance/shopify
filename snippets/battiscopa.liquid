@@ -153,6 +153,7 @@ product-form{
     {% endif %}
 {% endfor %}
 {% assign rtr = gx %}
+{% assign rtrx = gxx %}
 {% assign gxd = 0 %}
 {% for i in arr %}
   {% for coll in product.collections %}
@@ -174,7 +175,7 @@ product-form{
 {% assign gxs = 0 %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-  {% if producte.title == t and rtr >= gxs %}    
+  {% if producte.title == t and rtr >= gxs or rtrx >= gxs %}    
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
@@ -214,9 +215,15 @@ product-form{
   <br>
 
   {% assign prostatarr = battiarr %}
-  {% if batti == true or battie == true %}
+  {% if batti == true %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
+      Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
+  
+    {% endif %}
+  {% if battie == true %}
+      
+      {% assign prostate = prostatarr[rtrx] | split: "," %}
       Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
   
     {% endif %}
