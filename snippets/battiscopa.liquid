@@ -222,8 +222,9 @@ product-form{
   
     {% endif %}
   {% if battie == true %}
-      
+
       {% assign prostate = prostatarr[rtrx] | split: "," %}
+      {{ prostate[1] }}<br/>
       Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
   
     {% endif %}
