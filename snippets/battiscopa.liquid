@@ -204,13 +204,13 @@ product-form{
   
   {% assign firsty = 0 %}
   {% assign gx = 0 %}
-  {% assign prostatarr = battiarr | split: ";" %}
+  {% assign prostatarr = battiarr %}
   {% for i in arr %}
     {% if proid == i %}
 
         {% assign batti = true %}
       
-      {% assign prostate = prostatarr[1] %}
+      {% assign prostate = prostatarr[1] | split: "," %}
       {{ prostate }}
         {% assign prostat = battiarr[gx] | size %}
       {% assign descstat = battiarr[gx] %}
@@ -228,7 +228,6 @@ product-form{
     {% endif %}
   {% assign gx = gx | plus: 1 %}
 {% endfor %}
-  {{ prostate }}
 <div id="contml">7ml</div>
   </div>
         </div>
