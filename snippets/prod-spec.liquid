@@ -72,6 +72,15 @@
         {% endfor %}  
   
     {% endif %}
+  {% assign edr = i | split: " " %}  
+  {% for nedr in edr %}
+  {% if proidsps contains nedr %}
+      {% assign spcx = true %}
+    {% assign edrdsp = i | split: " " %}  
+  {% else %}
+      {% assign spcx = false %}
+  {% endif %}
+  {% endfor %}
   {% assign gxsp = gxsp | plus: 1 %}
   {% assign gxsps = 0 %}
 {% endfor %}
