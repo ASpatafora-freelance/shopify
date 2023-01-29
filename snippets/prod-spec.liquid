@@ -18,7 +18,10 @@
   {% endif %}
   {% endfor %}
   {% if spcx == true %}
-edo
+{{ sparr[gxxd] }}
+  {% endif %}
+  {% if  spcx == false %}
+  {% assign gxxd = gxxd | plus: 1 %}
   {% endif %}
 {% endfor %}
 {% for i in arrsp %}
