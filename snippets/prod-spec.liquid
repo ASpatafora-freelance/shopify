@@ -55,7 +55,7 @@
   <div style="width:50%;padding-left:2px;">
 {% assign proidsp = product.title | string %}
 {% assign gxsp = 0 %}
-{% assign gxspx = 0 %}
+{% assign gxx = 0 %}
 {% assign gxsps = 0 %}<p>{{ product.title }}<br/>
 {% for i in arrsp %}
     {% if proidsp == i %}
@@ -75,13 +75,15 @@
     {% endif %}
   {% assign edr = i | split: " " %}  
   {% for nedr in edr %}
-  {% if proidsps contains nedr %}
+  {% if proidsp contains nedr %}
       {% assign spcx = true %}
-    {% assign edrdsp = i | split: " " %}  
   {% else %}
       {% assign spcx = false %}
   {% endif %}
   {% endfor %}
+  {% if  spcx == false %}
+  {% assign gxx = gxx | plus: 1 %}
+  {% endif %}
   {% assign gxsp = gxsp | plus: 1 %}
   {% assign gxsps = 0 %}
 {% endfor %}
