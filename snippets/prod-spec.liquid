@@ -87,10 +87,10 @@
 {% if  spcxs == true %}
 
 {% for j in sparr %}
-          {% if gxxs <= gxx %}
+          {% if gxxs == gxx %}
             
-             {% assign arri = j | split: "," %}
-             {% for z in arri %}
+             {% assign arrie = j | split: "," %}
+             {% for z in arrie %}
                  {{ z }}<br/>
              {% endfor %}  
             </p>
