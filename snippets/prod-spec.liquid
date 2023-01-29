@@ -75,9 +75,9 @@
         {% endfor %}  
   
     {% endif %}
-  {% assign edr = i | split: " " %}  
-  {% for nedr in edr %}
-  {% if proidsp contains nedr %}
+  {% assign edrs = i | split: " " %}  
+  {% for nedrs in edrs %}
+  {% if proidsp contains nedrs %}
       {% assign spcxs = true %}
   {% else %}
       {% assign spcxs = false %}
