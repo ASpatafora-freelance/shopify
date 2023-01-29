@@ -78,13 +78,13 @@
   {% assign edr = i | split: " " %}  
   {% for nedr in edr %}
   {% if proidsp contains nedr %}
-      {% assign spcx = true %}
+      {% assign spcxs = true %}
   {% else %}
-      {% assign spcx = false %}
+      {% assign spcxs = false %}
   {% endif %}
   {% endfor %}
 
-{% if  spcx == true %}
+{% if  spcxs == true %}
 
 {% for j in sparr %}
           {% if gxxs >= gxx %}
@@ -100,7 +100,7 @@
     
 {% endif %}
     
-  {% if  spcx == false %}
+  {% if  spcxs == false %}
   {% assign gxx = gxx | plus: 1 %}
   {% endif %}
   {% assign gxsp = gxsp | plus: 1 %}
