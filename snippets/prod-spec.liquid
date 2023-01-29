@@ -81,6 +81,23 @@
       {% assign spcx = false %}
   {% endif %}
   {% endfor %}
+
+{% if  spcx == true %}
+
+{% for j in sparr %}
+          {% if gxxs == gxx %}
+            
+             {% assign arri = j | split: "," %}
+             {% for z in arri %}
+                 {{ z }}<br/>
+             {% endfor %}  
+            </p>
+          {% endif %}
+          {% assign gxxs = gxxs | plus: 1 %}
+        {% endfor %}  
+    
+{% endif %}
+    
   {% if  spcx == false %}
   {% assign gxx = gxx | plus: 1 %}
   {% endif %}
