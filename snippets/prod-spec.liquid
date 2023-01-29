@@ -21,12 +21,6 @@
   {% endfor %}
   {% if spcx == true %}
 {% assign er = sparr[gxxd] %}
-    {% if spcx == true %}
-    {% assign arrin = er | split: "," %}
-             {% for z in arrin %}
-                 {{ z }}<br/>
-             {% endfor %} 
-  {% endif %}
   {% endif %}
   {% if  spcx == false and spc == false %}
   {% assign gxxd = gxxd | plus: 1 %}
