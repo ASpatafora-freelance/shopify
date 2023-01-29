@@ -218,10 +218,11 @@ product-form{
   {% if batti == true %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
-      {{ prostate[1] | replace: "\", "" }}<br/>
+      {{ prostate[1] | replace: "\", "" }} <br/>
       Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
   
     {% endif %}
+    
   {% if battie == true %}
 
       {% assign prostate = prostatarr[rtrx] | split: "," %}
