@@ -21,7 +21,6 @@
   {% endfor %}
   {% if spcx == true %}
 {% assign er = sparr[gxxd] %}
-    {{ er }}
   {% endif %}
   {% if  spcx == false %}
   {% assign gxxd = gxxd | plus: 1 %}
@@ -63,10 +62,7 @@
 </div>
   <div style="width:50%;padding-left:2px;">
 {% assign proidsp = product.title | string %}
-  {% assign spcxs = false %}
 {% assign gxsp = 0 %}
-{% assign gxx = 0 %}
-  {% assign gxxs = 0 %}
 {% assign gxsps = 0 %}<p>{{ product.title }}<br/>
 {% for i in arrsp %}
     {% if proidsp == i %}
@@ -84,36 +80,15 @@
         {% endfor %}  
   
     {% endif %}
-  {% assign edrs = i | split: " " %}  
-  {% for nedrs in edrs %}
-  {% if proidsp contains nedrs %}
-      {% assign spcxs = true %}
-  {% else %}
-      {% assign spcxs = false %}
-  {% endif %}
-  {% endfor %}
-
-{% if  spcxs == true %}
-{% for j in sparr %}
-          {% if gxxs == gxx %}
-            
-             {% assign arrie = j | split: "," %}
-             {% for z in arrie %}
-                 {{ z }}<br/>
-             {% endfor %}  
-            </p>
-          {% endif %}
-          {% assign gxxs = gxxs | plus: 1 %}
-        {% endfor %}  
-    
-{% endif %}
-    
-  {% if  spcxs == false %}
-  {% assign gxx = gxx | plus: 1 %}
-  {% endif %}
   {% assign gxsp = gxsp | plus: 1 %}
   {% assign gxsps = 0 %}
 {% endfor %}
+  {% if spcx == true %}
+    {% assign arrin = er | split: "," %}
+             {% for z in arrin %}
+                 {{ z }}<br/>
+             {% endfor %} 
+  {% endif %}
   </div>
 
 </section>
