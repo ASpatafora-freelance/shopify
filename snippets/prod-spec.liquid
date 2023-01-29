@@ -4,6 +4,7 @@
 {% assign proidsps = product.title | string %}
 {% assign spc = false %}
 {% assign spcx = false %}
+{% assign spcxd = false %}
 {% assign gxxd = 0 %}
 {% for i in arrsp %}
     {% if proidsps == i %}
@@ -20,6 +21,7 @@
   {% endif %}
   {% endfor %}
   {% if spcx == true %}
+    {% assign spcxd = true %}
 {% assign er = sparr[gxxd] %}
   {% endif %}
   {% if  spcx == false and spc == false %}
@@ -88,7 +90,7 @@
 
 </section>
 {% endif %}
-{% if spc == false and spcx == true %}
+{% if spc == false and spcxd == true %}
 <h2 style="margin-left:14%;">Specifice</h2>
 <section style="display:flex;flex-wrap:wrao;">
 <div style="width:50%;padding-right:2px;">
