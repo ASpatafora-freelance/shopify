@@ -18,7 +18,8 @@
   {% endif %}
   {% endfor %}
   {% if spcx == true %}
-{{ sparr[gxxd] }}
+{% assign er = sparr[gxxd] %}
+    {{ er }}
   {% endif %}
   {% if  spcx == false %}
   {% assign gxxd = gxxd | plus: 1 %}
