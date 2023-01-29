@@ -89,7 +89,7 @@
   {% assign gxsp = gxsp | plus: 1 %}
   {% assign gxsps = 0 %}
 {% endfor %}
-  {% if spcx == true %}
+  {% if spcx == true and spc == false %}
     {% assign arrin = er | split: "," %}
              {% for z in arrin %}
                  {{ z }}<br/>
