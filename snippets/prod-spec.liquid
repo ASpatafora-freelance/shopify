@@ -54,6 +54,7 @@
 </div>
   <div style="width:50%;padding-left:2px;">
 {% assign proidsp = product.title | string %}
+  {% assign spcxs = false %}
 {% assign gxsp = 0 %}
 {% assign gxx = 0 %}
   {% assign gxxs = 0 %}
@@ -86,7 +87,7 @@
 {% if  spcx == true %}
 
 {% for j in sparr %}
-          {% if gxxs <= gxx %}
+          {% if gxxs >= gxx %}
             
              {% assign arri = j | split: "," %}
              {% for z in arri %}
