@@ -130,6 +130,7 @@ product-form{
 {% assign gxx = 0 %}
 {% assign batti = false %}
 {% assign battie = false %}
+{% assign batties = false %}
 {% for i in arr %}
 
 {% if proid == i %}
@@ -143,9 +144,14 @@ product-form{
     {% if product.title contains nedr %}
       {% assign battie = true %}
   {% else %}
+      {% if batties == fasle %}
       {% assign battie = false %}
+        {% endif %}
     {% endif %}
   {% endfor %}
+  {% if battie == true %}
+  {% assign batties = true %}
+  {% endif %}
   {% if batti == false and battie == false %}
   {% assign gx = gx | plus: 1 %}
     {% endif %}
@@ -176,7 +182,7 @@ product-form{
 {% assign gxs = 0 %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-  {% if producte.title == t and rtr <= gxs or rtrx <= gxs %}    
+  {% if producte.title == t and rtr >= gxs or rtrx >= gxs %}    
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
