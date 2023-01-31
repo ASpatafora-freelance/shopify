@@ -231,7 +231,7 @@ product-form{
   
     {% endif %}
     
-  {% if battie == true %}
+  {% if battie == true and batti == false %}
 
       {% assign prostate = prostatarr[rtrx] | split: "," %}
       {{ prostate[1] | replace: "\", "" }}<br/>
