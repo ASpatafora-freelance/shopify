@@ -40,29 +40,14 @@
 {% if spc == true %}
 <h2 style="margin-left:14%;">Specifice</h2>
 <section style="display:flex;flex-wrap:wrao;">
-<div style="width:50%;padding-right:2px;">
-<p style="text-align:right;font-weight:800;">
-  Titolo:<br/>
-  Produttore:<br/>
-  Codice prodotto:<br/>
-  Scelta:<br/>
-  Materiale:<br/>
-  Finitura:<br/>
-  Effetto:<br/>
-  Stonalizzazione:<br/>
-  Forma:<br/>
-  Formato:<br/>
-  Spessore:<br/>
-  Prezzo per scatola:<br/>
-  Prezzo al metro quadro:<br/>
-  Peso al pallet:<br/>
-  Mq al pallet:<br/>
-  Scatole per pallet:<br/>
-  Mq per scatola:<br/>
-  Peso per scatola:<br/>
-  Pezzi per scatola:<br/>
-</p>
-</div>
+<ul class="nav nav-tabs" id="TabsProdotto" role="tablist">
+                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="materiali">Materiali
+                                    </li>
+                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="colori">Colori
+                                    </li>
+                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="effetti">Effetti
+                                    </li>
+</ul>
   <div style="width:50%;padding-left:2px;">
 {% assign proidsp = product.title | string %}
 {% assign gxsp = 0 %}
