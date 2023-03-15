@@ -196,6 +196,11 @@
       "settings": {
       }
     },
+    "7f2faeb1-fc46-4e94-b974-b1713b043387": {
+      "type": "catalogo",
+      "settings": {
+      }
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -296,6 +301,7 @@
     "main",
     "787ab4c8-9092-4b7d-8666-e469be744bb6",
     "3c620ab0-1ee8-478c-9d49-c44e397d8186",
+    "7f2faeb1-fc46-4e94-b974-b1713b043387",
     "image-with-text",
     "multicolumn",
     "product-recommendations"
