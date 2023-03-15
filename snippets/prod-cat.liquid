@@ -87,10 +87,17 @@
                                     </li>
 </ul>
   <div style="width:50%;padding-left:2px;">
-<p>{{ product.title }}<br/>
     {% assign arrin = er | split: "," %}
+    {% assign numd = 1 %}
              {% for z in arrin %}
-                 {{ z }}<br/>
+                {% if numd == 1 %}
+                 <div id="dispmat">{{ z }}</div>
+                {% elsif numd == 2 %}
+                 <div id="dispcol">{{ z }}</div>
+                {% else %}
+                 <div id="dispeff">{{ z }}</div>
+                {% endif %}
+               {% assign numd = numd + 1 %}
              {% endfor %} 
   </div>
 
