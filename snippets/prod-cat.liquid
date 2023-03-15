@@ -93,9 +93,9 @@
                 {% if numd == 1 %}
                  <div id="dispmat">{{ z }}</div>
                 {% elsif numd == 2 %}
-                 <div id="dispcol">{{ z }}</div>
+                 <div id="dispcol" style="display:none;">{{ z }}</div>
                 {% else %}
-                 <div id="dispeff">{{ z }}</div>
+                 <div id="dispeff" style="display:none;">{{ z }}</div>
                 {% endif %}
                {% assign numd = numd | plus: 1 %}
              {% endfor %} 
