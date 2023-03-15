@@ -41,38 +41,44 @@
 <h2 style="margin-left:14%;">Specifice</h2>
 <section style="display:flex;flex-wrap:wrao;">
 <ul class="nav nav-tabs" id="TabsProdotto" role="tablist">
-                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="materiali">Materiali
+                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="materiali" onclick="mymeth()">Materiali
                                     </li>
-                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="colori">Colori
+                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="colori" onclick="mycolera()">Colori
                                     </li>
-                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="effetti">Effetti
+                                    <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="effetti" onclick="myeffetto()">Effetti
                                     </li>
 </ul>
   <div style="width:50%;padding-left:2px;">
-{% assign proidsp = product.title | string %}
-{% assign gxsp = 0 %}
-{% assign gxsps = 0 %}<p>{{ product.title }}<br/>
-{% for i in arrsp %}
-    {% if proidsp == i %}
-
-        {% for j in sparr %}
-          {% if gxsps == gxsp %}
-            
-             {% assign arri = j | split: "," %}
-             {% for z in arri %}
-                 {{ z }}<br/>
-             {% endfor %}  
-            </p>
-          {% endif %}
-          {% assign gxsps = gxsps | plus: 1 %}
-        {% endfor %}  
-  
-    {% endif %}
-  {% assign gxsp = gxsp | plus: 1 %}
-  {% assign gxsps = 0 %}
-{% endfor %}
+    {% assign arrin = er | split: "," %}
+    {% assign numd = 1 %}
+             {% for z in arrin %}
+                {% if numd == 1 %}
+                 <div id="dispmat">{{ z }}</div>
+                {% elsif numd == 2 %}
+                 <div id="dispcol" style="display:none;">{{ z }}</div>
+                {% else %}
+                 <div id="dispeff" style="display:none;">{{ z }}</div>
+                {% endif %}
+               {% assign numd = numd | plus: 1 %}
+             {% endfor %} 
   </div>
-
+<script type="text/javascript">
+  function mymeth(){
+    document.getElementById("dispcol").style.display = "none";
+    document.getElementById("dispeff").style.display = "none";
+    document.getElementById("dispmat").style.display = "inherit";
+  }
+  function mycolera(){
+    document.getElementById("dispmat").style.display = "none";
+    document.getElementById("dispeff").style.display = "none";
+    document.getElementById("dispcol").style.display = "inherit";
+  }
+  function myeffetto(){
+    document.getElementById("dispcol").style.display = "none";
+    document.getElementById("dispmat").style.display = "none";
+    document.getElementById("dispeff").style.display = "inherit";
+  }
+</script>
 </section>
 {% endif %}
 {% if spc == false and spcxd == true %}
