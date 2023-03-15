@@ -97,7 +97,7 @@
                 {% else %}
                  <div id="dispeff">{{ z }}</div>
                 {% endif %}
-               {% assign numd = numd + 1 %}
+               {% assign numd = numd | plus: 1 %}
              {% endfor %} 
   </div>
 
