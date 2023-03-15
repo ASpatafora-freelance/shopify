@@ -1,0 +1,128 @@
+
+{% assign arrsp = ";Waterfall Dark" | split: ";" %}
+{% assign sparr = ";red,red,metal" | split: ";" %}
+{% assign proidsps = product.title | string %}
+{% assign spc = false %}
+{% assign spcx = false %}
+{% assign spcxd = false %}
+{% assign gxxd = 0 %}
+{% for i in arrsp %}
+    {% if proidsps == i %}
+      
+        {% assign spc = true %}
+  
+    {% endif %}
+  {% assign edr = i | split: " " %}  
+  {% for nedr in edr %}
+  {% if proidsps contains nedr %}
+      {% assign spcx = true %}
+  {% else %}
+      {% assign spcx = false %}
+  {% endif %}
+  {% endfor %}
+  {% if spcx == true %}
+    {% assign spcxd = true %}
+{% assign er = sparr[gxxd] %}
+  {% endif %}
+  {% if  spcx == false and spc == false %}
+  {% assign gxxd = gxxd | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% for i in arrsp %}
+  {% for coll in product.collections %}
+{% if i == coll.title %}
+
+        {% assign spc = true %}
+    {% endif %}
+{% endfor %}
+{% endfor %}
+
+{% if spc == true %}
+<h2 style="margin-left:14%;">Specifice</h2>
+<section style="display:flex;flex-wrap:wrao;">
+<div style="width:50%;padding-right:2px;">
+<p style="text-align:right;font-weight:800;">
+  Titolo:<br/>
+  Produttore:<br/>
+  Codice prodotto:<br/>
+  Scelta:<br/>
+  Materiale:<br/>
+  Finitura:<br/>
+  Effetto:<br/>
+  Stonalizzazione:<br/>
+  Forma:<br/>
+  Formato:<br/>
+  Spessore:<br/>
+  Prezzo per scatola:<br/>
+  Prezzo al metro quadro:<br/>
+  Peso al pallet:<br/>
+  Mq al pallet:<br/>
+  Scatole per pallet:<br/>
+  Mq per scatola:<br/>
+  Peso per scatola:<br/>
+  Pezzi per scatola:<br/>
+</p>
+</div>
+  <div style="width:50%;padding-left:2px;">
+{% assign proidsp = product.title | string %}
+{% assign gxsp = 0 %}
+{% assign gxsps = 0 %}<p>{{ product.title }}<br/>
+{% for i in arrsp %}
+    {% if proidsp == i %}
+
+        {% for j in sparr %}
+          {% if gxsps == gxsp %}
+            
+             {% assign arri = j | split: "," %}
+             {% for z in arri %}
+                 {{ z }}<br/>
+             {% endfor %}  
+            </p>
+          {% endif %}
+          {% assign gxsps = gxsps | plus: 1 %}
+        {% endfor %}  
+  
+    {% endif %}
+  {% assign gxsp = gxsp | plus: 1 %}
+  {% assign gxsps = 0 %}
+{% endfor %}
+  </div>
+
+</section>
+{% endif %}
+{% if spc == false and spcxd == true %}
+<h2 style="margin-left:14%;">Specifice</h2>
+<section style="display:flex;flex-wrap:wrao;">
+<div style="width:50%;padding-right:2px;">
+<p style="text-align:right;font-weight:800;">
+  Titolo:<br/>
+  Produttore:<br/>
+  Codice prodotto:<br/>
+  Scelta:<br/>
+  Materiale:<br/>
+  Finitura:<br/>
+  Effetto:<br/>
+  Stonalizzazione:<br/>
+  Forma:<br/>
+  Formato:<br/>
+  Spessore:<br/>
+  Prezzo per scatola:<br/>
+  Prezzo al metro quadro:<br/>
+  Peso al pallet:<br/>
+  Mq al pallet:<br/>
+  Scatole per pallet:<br/>
+  Mq per scatola:<br/>
+  Peso per scatola:<br/>
+  Pezzi per scatola:<br/>
+</p>
+</div>
+  <div style="width:50%;padding-left:2px;">
+<p>{{ product.title }}<br/>
+    {% assign arrin = er | split: "," %}
+             {% for z in arrin %}
+                 {{ z }}<br/>
+             {% endfor %} 
+  </div>
+
+</section>
+{% endif %}
