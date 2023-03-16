@@ -96,11 +96,11 @@
     {% assign numd = 1 %}
              {% for z in arrin %}
                 {% if numd == 1 %}
-                 <div id="dispmat">{{ z }}</hr></div>
+                 <div id="dispmat">{{ z }}<hr></div>
                 {% elsif numd == 2 %}
-                 <div id="dispcol" style="display:none;">{{ z }}</hr></div>
+                 <div id="dispcol" style="display:none;">{{ z }}<hr></div>
                 {% else %}
-                 <div id="dispeff" style="display:none;">{{ z }}</hr></div>
+                 <div id="dispeff" style="display:none;">{{ z }}<hr></div>
                 {% endif %}
                {% assign numd = numd | plus: 1 %}
              {% endfor %} 
