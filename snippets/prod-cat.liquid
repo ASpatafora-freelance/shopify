@@ -161,7 +161,21 @@
 #TabsProdotto.nav-tabs .nav-link {
     border-top: 2px solid #e0dedb !important;
 }
-
+.col-12:not(.cambiaCategoria) {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+#TabsProdotto.nav-tabs .nav-link:active {
+    border-left: 2px solid #7d7d7d !important;
+    border-top: 2px solid #7d7d7d !important;
+    color: #000000;
+    background: transparent;
+}
 </style>
 </section>
 {% endif %}
