@@ -208,7 +208,7 @@
     padding-right: 15px;
     padding-left: 15px;
 }
-#TabsProdotto.nav-tabs .nav-item:first-child .nav-link:not(:active)::before {
+#TabsProdotto.nav-tabs .nav-item:first-child .nav-link:not(:focus)::before {
     content: '';
     position: absolute;
     left: 0px;
@@ -230,7 +230,9 @@
 }
 #TabsProdotto.nav-tabs .nav-link:focus{
     border-left: 2px solid #7d7d7d !important;
+    border-right: 2px solid #7d7d7d !important;
     border-top: 2px solid #7d7d7d !important;
+    border-bottom:none !important;
     color: #000000;
     background: transparent;
 }
