@@ -1,6 +1,6 @@
 
-{% assign arrsp = ";Waterfall Dark" | split: ";" %}
-{% assign sparr = ";red,redo,metal" | split: ";" %}
+{% assign arrsp = "" | split: ";" %}
+{% assign sparr = "" | split: ";" %}
 {% assign proidsps = product.title | string %}
 {% assign spc = false %}
 {% assign spcx = false %}
@@ -210,7 +210,7 @@
     padding-left: 15px;
 }
 #TabsProdotto.nav-tabs .nav-item:first-child .nav-link:not(:focus)::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0px;
     top: 0;
@@ -220,7 +220,7 @@
     background: #e0dedb;
 }
 #TabsProdotto.nav-tabs .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -2px;
     top: 0;
