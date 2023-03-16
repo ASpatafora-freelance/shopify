@@ -208,7 +208,27 @@
     padding-right: 15px;
     padding-left: 15px;
 }
-#TabsProdotto.nav-tabs .nav-link:active {
+#TabsProdotto.nav-tabs .nav-item:first-child .nav-link:not(:active)::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0;
+    z-index: 0;
+    width: 2px;
+    height: 98%;
+    background: #e0dedb;
+}
+#TabsProdotto.nav-tabs .nav-link::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 0;
+    z-index: 0;
+    width: 2px;
+    height: 98%;
+    background: #e0dedb;
+}
+#TabsProdotto.nav-tabs .nav-link::active {
     border-left: 2px solid #7d7d7d !important;
     border-top: 2px solid #7d7d7d !important;
     color: #000000;
