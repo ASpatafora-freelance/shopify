@@ -83,7 +83,7 @@
 {% endif %}
 {% if spc == false and spcxd == true %}
 <h2 style="margin-left:14%;">Catalogo</h2>
-<section style="display:flex;flex-wrap:wrao;">
+<section style="display:flex;flex-wrap:wrap;">
 <ul class="nav nav-tabs" id="TabsProdotto" role="tablist">
                                     <li class="nav-item d-flex flex-grow-1 col-auto p-0" id="materiali" onclick="mymeth()"><a class="nav-link rounded-0 border-0 col-12 py-2 px-2 px-lg-auto font-16 text-nero text-center" role="button" tabindex="0">Materiali</a>
                                     </li>
@@ -125,6 +125,7 @@
 </script>
 <style>
 #TabsProdotto{
+    width:100%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
