@@ -164,7 +164,7 @@ product-form{
 {% assign rtrx = gxx %}
 {% assign gxd = 0 %}
 {% for i in arr %}
-{% for coll in product.collections %}
+  {% for coll in product.collections %}
 {% if i == coll.title %}
 
         {% assign batti = true %}
@@ -183,7 +183,7 @@ product-form{
 {% assign gxs = 0 %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-  {% if producte.title == t %}    
+  {% if producte.title == t and rtr == gxs or rtrx == gxs %}    
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
@@ -492,25 +492,25 @@ product-form{
   var sumes = 0;
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
-  document.getElementById("contml").innerHTML = rt +' ml';
+  document.getElementById("contml").innerHTML = rt +" ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
-  buto[j].addEventListener('click', function(){
+  buto[j].addEventListener("click", function(){
      sume = parseInt(quant.value) - 1;
      sumes = sume * rt;
   if(sumes < rt){
   sumes = rt;
   }
-     document.getElementById("contml").innerHTML = sumes+' ml';
+     document.getElementById("contml").innerHTML = sumes+" ml";
   });
   }else{
-  buto[j].addEventListener('click', function(){
+  buto[j].addEventListener("click", function(){
      sume = 1 + parseInt(quant.value);
      sumes = sume * rt;
   if(sumes < rt){
   sumes = rt;
   }
-     document.getElementById("contml").innerHTML = sumes+' ml';
+     document.getElementById("contml").innerHTML = sumes+" ml";
   });
   }
   }
