@@ -230,9 +230,15 @@ product-form{
   <div class="battiscopamain">
             <div class="battiscopaname">{{ product.title }}
   <br>
-
+{% if tito == false %}
+  <style>
+  #battscr{
+      display:none;
+  }
+  </style>
+{% endif %}
   {% assign prostatarr = battiarr %}
-  {% if batti == true and tito == false %}
+  {% if batti == true %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
       {{ prostate[1] | replace: "\", "" }} <br/>
