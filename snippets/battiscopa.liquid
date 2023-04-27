@@ -503,7 +503,7 @@ product-form{
   var pricer = Number({{ product.price }});
   pricer = pricer/100;
   sumes = pricer/rt;
-  document.getElementById("contml").innerHTML = sumes +" ml";
+  document.getElementById("contml").innerHTML = sumes +"eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener("click", function(){
@@ -513,7 +513,7 @@ product-form{
   sumes = rt;
   }
      sumes = pricer/sumes;
-     document.getElementById("contml").innerHTML = sumes+" ml";
+     document.getElementById("contml").innerHTML = sumes+"eur/ml";
   });
   }else{
   buto[j].addEventListener("click", function(){
@@ -523,7 +523,7 @@ product-form{
   sumes = rt;
   }
      sumes = pricer/sumes;
-     document.getElementById("contml").innerHTML = sumes+" ml";
+     document.getElementById("contml").innerHTML = sumes+"eur/ml";
   });
   }
   }
