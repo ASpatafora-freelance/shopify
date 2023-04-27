@@ -500,9 +500,10 @@ product-form{
   var sumes = 0;
   var pricer = Number({{ product.price }});
   pricer = pricer/100;
-  sumesr = (pricer/rt).toFixed(2);
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
+  sumesr = (pricer/rt).toFixed(2);
+  
   document.getElementById("contml").innerHTML = sumesr +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
