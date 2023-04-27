@@ -152,16 +152,16 @@ product-form{
   {% endif %}
   {% if batti == false and battie == false %}
   {% assign gx = gx | plus: 1 %}
-  {% endif %}
+    {% endif %}
   {% if  battie == false and batti == false %}
   {% assign gxx = gxx | plus: 1 %}
-  {% endif %}
+    {% endif %}
 {% endfor %}
 {% assign rtr = gx %}
 {% assign rtrx = gxx %}
 {% assign gxd = 0 %}
 {% for i in arr %}
-{% for coll in product.collections %}
+  {% for coll in product.collections %}
 {% if i == coll.title %}
 
         {% assign batti = true %}
@@ -178,10 +178,9 @@ product-form{
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 {% include "prod-data" %}
 {% assign gxs = 0 %}
-{% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-  {% if producte.title == t and rtr == gxs or rtrx == gxs %}
+  {% if producte.title == t and rtr == gxs or rtrx == gxs %}    
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
@@ -219,6 +218,7 @@ product-form{
   <div class="battiscopamain">
             <div class="battiscopaname">{{ product.title }}
   <br>
+
   {% assign prostatarr = battiarr %}
   {% if batti == true %}
       
@@ -364,7 +364,7 @@ product-form{
                           class="product-form__submit button button--full-width button--primary"
                           disabled
                         >
-                          {{ "products.producte.sold_out" | t }}
+                          {{ "products.product.sold_out" | t }}
                         </button>
                       </div>
                     </div>
@@ -403,14 +403,14 @@ product-form{
               <button
                 class="button button--full-width product__xr-button"
                 type="button"
-                aria-label="{{ "products.producte.xr_button_label" | t }}"
+                aria-label="{{ "products.product.xr_button_label" | t }}"
                 data-shopify-xr
                 data-shopify-model3d-id="{{ first_3d_model.id }}"
                 data-shopify-title="{{ product.title | escape }}"
                 data-shopify-xr-hidden
               >
                 {% render "icon-3d-model" %}
-                {{ "products.producte.xr_button" | t }}
+                {{ "products.product.xr_button" | t }}
               </button>
             {%- endif -%}
           </media-gallery>
@@ -468,7 +468,7 @@ product-form{
 
 <script src="{{ "product-form.js" | asset_url }}" defer="defer"></script>
 {%- if first_3d_model -%}
-  <script type="application/json" id="ProductJSON-{{ producte.id }}">
+  <script type="application/json" id="ProductJSON-{{ product.id }}">
     {{ product.media | where: "media_type", "model" | json }}
   </script>
   <script src="{{ "product-model.js" | asset_url }}" defer></script>
