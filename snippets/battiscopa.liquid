@@ -185,7 +185,7 @@ product-form{
   {% for producte in collections.battiscopa.products %}
     {{ producte.title }}<br/>
     {{ t }}<br/>
-  {% if producte.title == t and rtr == gxs or rtrx == gxs %}    
+  {% if producte.title == t %}    
     {%- assign product = producte -%}
     
   {% endif %}
