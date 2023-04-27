@@ -502,7 +502,8 @@ product-form{
   rt = Number(rt);
   var pricer = Number({{ product.price }});
   pricer = pricer/100;
-  document.getElementById("contml").innerHTML = rt +" ml";
+  sumes = pricer/rt;
+  document.getElementById("contml").innerHTML = sumes +" ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener("click", function(){
