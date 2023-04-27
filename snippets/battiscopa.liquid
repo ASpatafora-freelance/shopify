@@ -508,21 +508,21 @@ product-form{
   if(j == 0){
   buto[j].addEventListener("click", function(){
      sume = parseInt(quant.value) - 1;
-     sumes = sume * rt;
+     sumes = pricer/(sume * rt);
   if(sumes < rt){
-  sumes = rt;
+  sumes = pricer/rt;
   }
-     sumes = (pricer/sumes).toFixed(2);
+     sumes = (sumes).toFixed(2);
      document.getElementById("contml").innerHTML = sumes+" eur/ml";
   });
   }else{
   buto[j].addEventListener("click", function(){
      sume = 1 + parseInt(quant.value);
-     sumes = sume * rt;
+     sumes = pricer/(sume * rt);
   if(sumes < rt){
-  sumes = rt;
+  sumes = pricer/rt;
   }
-     sumes = (pricer/sumes).toFixed(2);
+     sumes = (sumes).toFixed(2);
      document.getElementById("contml").innerHTML = sumes+" eur/ml";
   });
   }
