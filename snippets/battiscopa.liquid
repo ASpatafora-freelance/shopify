@@ -505,6 +505,7 @@ product-form{
   rt = pricer/rt;
   sumesr = rt.toFixed(2);  
   document.getElementById("contml").innerHTML = sumesr +" eur/ml";
+  document.getElementById('battiscopacontainer').getElementsByClassName('price-item')[0].innerHTML = sumesr +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener("click", function(){
