@@ -231,7 +231,7 @@ product-form{
   <br>
 
   {% assign prostatarr = battiarr %}
-  {{ product.price }}
+  {{ product.price | divided_by: 100 }}
   {% if batti == true %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
