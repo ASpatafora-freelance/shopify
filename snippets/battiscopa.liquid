@@ -508,9 +508,9 @@ product-form{
   if(j == 0){
   buto[j].addEventListener("click", function(){
      sume = parseInt(quant.value) - 1;
-     sumes = pricer/(sume * rt);
+     sumes = sume * rt;
   if(sumes < rt){
-  sumes = pricer/rt;
+  sumes = rt;
   }
      sumes = (sumes).toFixed(2);
      document.getElementById("contml").innerHTML = sumes+" eur/ml";
@@ -518,9 +518,9 @@ product-form{
   }else{
   buto[j].addEventListener("click", function(){
      sume = 1 + parseInt(quant.value);
-     sumes = pricer/(sume * rt);
+     sumes = sume * rt;
   if(sumes < rt){
-  sumes = pricer/rt;
+  sumes = rt;
   }
      sumes = (sumes).toFixed(2);
      document.getElementById("contml").innerHTML = sumes+" eur/ml";
