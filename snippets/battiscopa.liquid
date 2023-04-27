@@ -232,7 +232,7 @@ product-form{
   <br>
 
   {% assign prostatarr = battiarr %}
-  {% if batti == true %}
+  {% if batti == true and tito == false %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
       {{ prostate[1] | replace: "\", "" }} <br/>
