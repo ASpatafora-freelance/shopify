@@ -197,6 +197,7 @@ product-form{
   {% if producte.title == t and rtr == gxs or rtrx == gxs %}
     {% if tito == false %}
     {%- assign product = producte -%}
+    {% assign tito = true %}
     {% endif %}
   {% endif %}
   {% endfor %}
