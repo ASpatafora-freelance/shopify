@@ -1,6 +1,3 @@
-
-
-
 <style>
 #battiscopacontainer  .battiscopamain{
       min-width: 54%;
@@ -180,7 +177,8 @@ product-form{
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 {% include "prod-data" %}
-{% assign gxs = 0 %}{% comment %}
+{% assign gxs = 0 %}
+{% assign tito = false %}
 {% for collection in product.collections %}
   {% if collection.title == 'battiscopa' %}
   <style>
@@ -189,18 +187,27 @@ product-form{
   }
   </style>
   {% endif %}
-{% endfor %}{% endcomment %}
+{% endfor %}
 {% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-    {{ t }}<br/>
   {% if producte.title == t and rtr == gxs or rtrx == gxs %}
+    {% if tito == false %}
     {%- assign product = producte -%}
+    {% assign tito = true %}
+    {% endif %}
   {% endif %}
   {% endfor %}
     {% assign gxs = gxs | plus: 1 %}
 {% endfor %}
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+{% if tito == false %}
+<style>
+  #battscr{
+      display:none!important;
+  }
+  </style>
+{% endif %}
 {%- if first_3d_model -%}
   {{ "component-product-model.css" | asset_url | stylesheet_tag }}
   <link
@@ -607,6 +614,4 @@ product-form{
   edos.innerHTML = edo.innerHTML;
   });
 </script>
-                            
 {% endif %}
-
