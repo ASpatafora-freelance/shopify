@@ -160,6 +160,17 @@ product-form{
 {% assign rtr = gx %}
 {% assign rtrx = gxx %}
 {% assign gxd = 0 %}
+
+{% for collection in product.collections %}
+  {% if collection.title == 'battiscopa' %}
+  <style>
+  #battscr{
+      display:none!important;
+  }
+  </style>
+  {% endif %}
+{% endfor %}
+
 {% for i in arr %}
   {% for coll in product.collections %}
 {% if i == coll.title %}
