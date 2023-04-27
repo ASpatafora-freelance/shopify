@@ -177,7 +177,7 @@ product-form{
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 {% include "prod-data" %}
-{% assign gxs = 0 %}
+{% assign gxs = 0 %}{% comment %}
 {% for collection in product.collections %}
   {% if collection.title == 'battiscopa' %}
   <style>
@@ -186,7 +186,7 @@ product-form{
   }
   </style>
   {% endif %}
-{% endfor %}
+{% endfor %}{% endcomment %}
 {% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
