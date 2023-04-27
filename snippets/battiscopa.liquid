@@ -502,7 +502,8 @@ product-form{
   pricer = pricer/100;
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
-  sumesr = (pricer/rt).toFixed(2);  
+  rt = pricer/rt;
+  sumesr = rt.toFixed(2);  
   document.getElementById("contml").innerHTML = sumesr +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
