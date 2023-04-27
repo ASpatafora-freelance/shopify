@@ -181,16 +181,19 @@ product-form{
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 {% include "prod-data" %}
 {% assign gxs = 0 %}
+{% assign tito = false %}
 {% for collection in product.collections %}
-{{ collection.title }}
+  {% if collection.title == 'battiscopa' %}
+    {% assign tito = true %}
+  {% endif %}
 {% endfor %}
 {% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
   {% if producte.title == t and rtr == gxs or rtrx == gxs %}
-    
+    {% if tito == true %}
     {%- assign product = producte -%}
-    
+    {% endif %}
   {% endif %}
   {% endfor %}
     {% assign gxs = gxs | plus: 1 %}
