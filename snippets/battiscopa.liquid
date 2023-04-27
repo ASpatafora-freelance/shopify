@@ -181,11 +181,14 @@ product-form{
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
 {% include "prod-data" %}
 {% assign gxs = 0 %}
+{% for collection in product.collections %}
+
+{% endfor %}
 {% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-  {% if producte.title == t and rtr == gxs or rtrx == gxs %}    
-    {{ arripr[0] }}
+  {% if producte.title == t and rtr == gxs or rtrx == gxs %}
+    
     {%- assign product = producte -%}
     
   {% endif %}
