@@ -193,7 +193,6 @@ product-form{
 {% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-    {{ producte.title }}<br/>
     {{ t }}<br/>
   {% if producte.title == t and rtr == gxs or rtrx == gxs %}
     {%- assign product = producte -%}
