@@ -185,12 +185,12 @@ product-form{
   {% for producte in collections.battiscopa.products %}
     {{ producte.title }}
   {% if producte.title == t %}    
-    {%- assign product = producte -%}
+    {%- assign producte = producte -%}
   {% endif %}
   {% endfor %}
     {% assign gxs = gxs | plus: 1 %}
 {% endfor %}
-{%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+{%- assign first_3d_model = producte.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
   {{ "component-product-model.css" | asset_url | stylesheet_tag }}
   <link
@@ -211,7 +211,7 @@ product-form{
 
 <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
   <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
-    <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if producte.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
   
       <div class="product__info-wrapper grid__item">
   
@@ -250,7 +250,7 @@ product-form{
                 {% render block %}
               {%- when "price" -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render "price", product: product, use_variant: true, show_badges: true, price_class: "price--large" -%}
+                  {%- render "price", product: producte, use_variant: true, show_badges: true, price_class: "price--large" -%}
                 </div>
                 {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
@@ -262,10 +262,10 @@ product-form{
                     {%- endif -%}
                   </div>
                 {%- endif -%}
-                {%- if product != blank -%}
+                {%- if producte != blank -%}
                   <div {{ block.shopify_attributes }}>
-                    {%- form "product", product -%}
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    {%- form "product", producte -%}
+                      <input type="hidden" name="id" value="{{ producte.selected_or_first_available_variant.id }}">
                       {{ form | payment_terms }}
                     {%- endform -%}
                   </div>
@@ -279,7 +279,7 @@ product-form{
                   <quantity-input class="quantity">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                       <span class="visually-hidden">
-                        {{- "products.product.quantity.decrease" | t: product: product.title | escape -}}
+                        {{- "products.product.quantity.decrease" | t: product: producte.title | escape -}}
                       </span>
                       {% render "icon-minus" %}
                     </button>
@@ -294,7 +294,7 @@ product-form{
                     >
                     <button class="quantity__button no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
-                        {{- "products.product.quantity.increase" | t: product: product.title | escape -}}
+                        {{- "products.product.quantity.increase" | t: product: producte.title | escape -}}
                       </span>
                       {% render "icon-plus" %}
                     </button>
@@ -302,7 +302,7 @@ product-form{
                 </div>              
               {%- when "buy_buttons" -%}
                 <div {{ block.shopify_attributes }} style="width: fit-content;">
-                  {%- if product != blank -%}
+                  {%- if producte != blank -%}
                     <product-form class="product-form">
                       <div class="product-form__error-message-wrapper" role="alert" hidden>
                         <svg
@@ -320,11 +320,11 @@ product-form{
                         <span class="product-form__error-message"></span>
                       </div>
 
-                      {%- form "product", product, id: product_form_id, class: "form", novalidate: "novalidate", data-type: "add-to-cart-form" -%}
+                      {%- form "product", producte, id: product_form_id, class: "form", novalidate: "novalidate", data-type: "add-to-cart-form" -%}
                         <input
                           type="hidden"
                           name="id"
-                          value="{{ product.selected_or_first_available_variant.id }}"
+                          value="{{ producte.selected_or_first_available_variant.id }}"
                           disabled
                         >
                         <div class="product-form__buttons">
@@ -332,12 +332,12 @@ product-form{
                             type="submit"
                             name="add"
                             class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-                            {% if product.selected_or_first_available_variant.available == false %}
+                            {% if producte.selected_or_first_available_variant.available == false %}
                               disabled
                             {% endif %}
                           >
                             <span>
-                              {%- if product.selected_or_first_available_variant.available -%}
+                              {%- if producte.selected_or_first_available_variant.available -%}
                                 {{ "products.product.add_to_cart" | t }}
                               {%- else -%}
                                 {{ "products.product.sold_out" | t }}
@@ -389,14 +389,14 @@ product-form{
             data-desktop-layout="stacked"
           >
             <div id="GalleryViewer-{{ section.id }}-right" class="product__media-list">
-              {%- if product.selected_or_first_available_variant.featured_media != null -%}
-                {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              {%- if producte.selected_or_first_available_variant.featured_media != null -%}
+                {%- assign media = producte.selected_or_first_available_variant.featured_media -%}
                 <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
                   {% render "product-thumbnail", media: media, position: "featured", loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
                 </div>
               {%- endif -%}
-              {%- for media in product.media -%}
-                {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
+              {%- for media in producte.media -%}
+                {%- if media_to_render contains media.id and media.id != producte.selected_or_first_available_variant.featured_media.id -%}
                   <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
                     {% render "product-thumbnail", media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
                   </div>
@@ -410,7 +410,7 @@ product-form{
                 aria-label="{{ "products.product.xr_button_label" | t }}"
                 data-shopify-xr
                 data-shopify-model3d-id="{{ first_3d_model.id }}"
-                data-shopify-title="{{ product.title | escape }}"
+                data-shopify-title="{{ producte.title | escape }}"
                 data-shopify-xr-hidden
               >
                 {% render "icon-3d-model" %}
@@ -445,13 +445,13 @@ product-form{
           tabindex="0"
         >
           {%- liquid
-            if product.selected_or_first_available_variant.featured_media != null
-              assign media = product.selected_or_first_available_variant.featured_media
+            if producte.selected_or_first_available_variant.featured_media != null
+              assign media = producte.selected_or_first_available_variant.featured_media
               render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
             endif
           -%}
 
-          {%- for media in product.media -%}
+          {%- for media in producte.media -%}
             {%- liquid
               if section.settings.hide_variants and media_to_render contains media.id
                 assign variant_image = true
@@ -459,7 +459,7 @@ product-form{
                 assign variant_image = false
               endif
 
-              unless media.id == product.selected_or_first_available_variant.featured_media.id
+              unless media.id == producte.selected_or_first_available_variant.featured_media.id
                 render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
               endunless
             -%}
@@ -472,17 +472,17 @@ product-form{
 
 <script src="{{ "product-form.js" | asset_url }}" defer="defer"></script>
 {%- if first_3d_model -%}
-  <script type="application/json" id="ProductJSON-{{ product.id }}">
-    {{ product.media | where: "media_type", "model" | json }}
+  <script type="application/json" id="ProductJSON-{{ producte.id }}">
+    {{ producte.media | where: "media_type", "model" | json }}
   </script>
   <script src="{{ "product-model.js" | asset_url }}" defer></script>
 {%- endif -%}
 
 {%- liquid
-  if product.selected_or_first_available_variant.featured_media
-    assign seo_media = product.selected_or_first_available_variant.featured_media
+  if producte.selected_or_first_available_variant.featured_media
+    assign seo_media = producte.selected_or_first_available_variant.featured_media
   else
-    assign seo_media = product.featured_media
+    assign seo_media = producte.featured_media
   endif
 -%}
   <script type="text/javascript">
@@ -521,20 +521,20 @@ product-form{
   {
     "@context": "http://schema.org/",
     "@type": "Product",
-    "name": {{ product.title | json }},
+    "name": {{ producte.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
         {{ seo_media | image_url: width: seo_media.preview_image.width | prepend: "https:" | json }}
       ],
     {%- endif %}
-    "description": {{ product.description | strip_html | json }},
-    {% if product.selected_or_first_available_variant.sku != blank -%}
-      "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    "description": {{ producte.description | strip_html | json }},
+    {% if producte.selected_or_first_available_variant.sku != blank -%}
+      "sku": {{ producte.selected_or_first_available_variant.sku | json }},
     {%- endif %}
     "brand": {
       "@type": "Brand",
-      "name": {{ product.vendor | json }}
+      "name": {{ producte.vendor | json }}
     },
     "offers": [
       {%- for variant in product.variants -%}
@@ -585,7 +585,7 @@ product-form{
   });
 </script>
 
-{% if product.media.size > 0 %}
+{% if producte.media.size > 0 %}
   <script src="{{ "product-modal.js" | asset_url }}" defer="defer"></script>
   <script src="{{ "media-gallery.js" | asset_url }}" defer="defer"></script>
 {% endif %}
