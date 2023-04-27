@@ -498,11 +498,11 @@ product-form{
   var buto = conter.getElementsByClassName("quantity__button");
   var sume = 1;
   var sumes = 0;
-  var rt = document.getElementById("contml").innerHTML;
-  rt = Number(rt);
   var pricer = Number({{ product.price }});
   pricer = pricer/100;
   sumesr = (pricer/rt).toFixed(2);
+  var rt = document.getElementById("contml").innerHTML;
+  rt = Number(rt);
   document.getElementById("contml").innerHTML = sumesr +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
