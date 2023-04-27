@@ -503,7 +503,7 @@ product-form{
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
   sumesr = rt.toFixed(2);  
-  document.getElementById("contml").innerHTML = sumesr +" eur/ml";
+  document.getElementById("contml").innerHTML = sumesr +" ml";
   document.getElementById('battiscopacontainer').getElementsByClassName('price-item')[0].innerHTML = sumesr +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
@@ -514,7 +514,7 @@ product-form{
   sumes = rt;
   }
      sumes = (sumes).toFixed(2);
-     document.getElementById("contml").innerHTML = sumes+" eur/ml";
+     document.getElementById("contml").innerHTML = sumes+" ml";
   });
   }else{
   buto[j].addEventListener("click", function(){
@@ -524,7 +524,7 @@ product-form{
   sumes = rt;
   }
      sumes = (sumes).toFixed(2);
-     document.getElementById("contml").innerHTML = sumes+" eur/ml";
+     document.getElementById("contml").innerHTML = sumes+" ml";
   });
   }
   }
