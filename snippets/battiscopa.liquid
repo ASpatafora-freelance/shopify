@@ -503,7 +503,8 @@ product-form{
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
   sumesr = rt.toFixed(2); 
-  sumesrs = rt.toFixed(2);  
+  sumesrs = prices/rt;
+  sumesrs = sumesrs.toFixed(2);  
   document.getElementById("contml").innerHTML = sumesr +" ml";
   document.getElementById('battiscopacontainer').getElementsByClassName('price-item')[0].innerHTML = sumesrs +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
