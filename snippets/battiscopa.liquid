@@ -231,7 +231,6 @@ product-form{
   <br>
 
   {% assign prostatarr = battiarr %}
-  {{ product.price | divided_by: 100 }}
   {% if batti == true %}
       
       {% assign prostate = prostatarr[rtr] | split: "," %}
@@ -501,6 +500,8 @@ product-form{
   var sumes = 0;
   var rt = document.getElementById("contml").innerHTML;
   rt = Number(rt);
+  var pricer = Number({{ product.price }});
+  pricer = pricer/100;
   document.getElementById("contml").innerHTML = rt +" ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
