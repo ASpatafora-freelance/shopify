@@ -182,10 +182,10 @@ product-form{
 {% include "prod-data" %}
 {% assign gxs = 0 %}
   {% for t in battipo %}
-  {% for product in collections.battiscopa.products %}
-    {{ product.title }}
-  {% if product.title == t %}    
-    {%- assign product = product -%}
+  {% for producte in collections.battiscopa.products %}
+    {{ producte.title }}
+  {% if producte.title == t %}    
+    {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
     {% assign gxs = gxs | plus: 1 %}
