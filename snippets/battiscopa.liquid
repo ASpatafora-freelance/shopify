@@ -242,7 +242,7 @@ product-form{
   </div>
         </div>
   
-          {%- assign product_form_id = "product-form-" | append: section.id -%}
+          {%- assign product_form_id = "producte-form-" | append: section.id -%}
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
@@ -368,7 +368,7 @@ product-form{
                           class="product-form__submit button button--full-width button--primary"
                           disabled
                         >
-                          {{ "products.product.sold_out" | t }}
+                          {{ "products.producte.sold_out" | t }}
                         </button>
                       </div>
                     </div>
@@ -407,14 +407,14 @@ product-form{
               <button
                 class="button button--full-width product__xr-button"
                 type="button"
-                aria-label="{{ "products.product.xr_button_label" | t }}"
+                aria-label="{{ "products.producte.xr_button_label" | t }}"
                 data-shopify-xr
                 data-shopify-model3d-id="{{ first_3d_model.id }}"
                 data-shopify-title="{{ producte.title | escape }}"
                 data-shopify-xr-hidden
               >
                 {% render "icon-3d-model" %}
-                {{ "products.product.xr_button" | t }}
+                {{ "products.producte.xr_button" | t }}
               </button>
             {%- endif -%}
           </media-gallery>
@@ -460,7 +460,7 @@ product-form{
               endif
 
               unless media.id == producte.selected_or_first_available_variant.featured_media.id
-                render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+                render "producte-media", media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
               endunless
             -%}
           {%- endfor -%}
@@ -573,7 +573,7 @@ product-form{
     }
 
     if (!isIE()) return;
-    const hiddenInput = document.querySelector("#{{ product_form_id }} input[name="id"]");
+    const hiddenInput = document.querySelector("#{{ producte_form_id }} input[name="id"]");
     const noScriptInputWrapper = document.createElement("div");
     const variantSwitcher = document.querySelector("variant-radios[data-section="{{ section.id }}"]") || document.querySelector("variant-selects[data-section="{{ section.id }}"]");
     noScriptInputWrapper.innerHTML = document.querySelector(".product-form__noscript-wrapper-{{ section.id }}").textContent;
