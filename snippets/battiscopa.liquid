@@ -182,7 +182,7 @@ product-form{
 {% include "prod-data" %}
 {% assign gxs = 0 %}
 {% for collection in product.collections %}
-
+{{ collection }}
 {% endfor %}
 {% assign arripr = product.title | split:" " %}
   {% for t in battipo %}
