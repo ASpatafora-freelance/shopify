@@ -502,8 +502,8 @@ product-form{
   rt = Number(rt);
   var pricer = Number({{ product.price }});
   pricer = pricer/100;
-  sumes = pricer/rt;
-  document.getElementById("contml").innerHTML = sumes +" eur/ml";
+  sumesr = (pricer/rt).toFixed(2);
+  document.getElementById("contml").innerHTML = sumesr +" eur/ml";
   for(let j = 0; j <= buto.length; j++){
   if(j == 0){
   buto[j].addEventListener("click", function(){
@@ -512,7 +512,7 @@ product-form{
   if(sumes < rt){
   sumes = rt;
   }
-     sumes = pricer/sumes;
+     sumes = (pricer/sumes).toFixed(2);
      document.getElementById("contml").innerHTML = sumes+" eur/ml";
   });
   }else{
@@ -522,7 +522,7 @@ product-form{
   if(sumes < rt){
   sumes = rt;
   }
-     sumes = pricer/sumes;
+     sumes = (pricer/sumes).toFixed(2);
      document.getElementById("contml").innerHTML = sumes+" eur/ml";
   });
   }
