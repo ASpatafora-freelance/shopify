@@ -122,44 +122,25 @@ product-form{
   }
 </style>
 {% include "prod-data" %}
+
+
 {% assign proid = product.title | string %}
 {% assign gx = 0 %}
 {% assign gxx = 0 %}
 {% assign batti = false %}
-{% assign battis = false %}
-{% assign battie = false %}
-{% assign batties = false %}
 {% for i in arr %}
 
-{% if proid == i %}
-
-        {% assign batti = true %}
-  
-    {% endif %}
-  
-  {% assign edr = i | split: " " %}  
-  {% for nedr in edr %}
-    {% if product.title contains nedr %}
-      {% assign battie = true %}
-  {% else %}
-      {% if batties == fasle %}
-      {% assign battie = false %}
-        {% endif %}
-    {% endif %}
-  {% endfor %}
-  {% if battie == true %}
-  {% assign batties = true %}
+  {% if proid == i %}
+        {% assign batti = true %}  
   {% endif %}
-  {% if batti == false and battie == false %}
+  
+  {% if batti == false %}
   {% assign gx = gx | plus: 1 %}
-    {% endif %}
-  {% if  battie == false and batti == false %}
-  {% assign gxx = gxx | plus: 1 %}
-    {% endif %}
+  {% endif %}
+  
 {% endfor %}
+
 {% assign rtr = gx %}
-{% assign rtrx = gxx %}
-{% assign gxd = 0 %}
 
 {% for collection in product.collections %}
   {% if collection.title == 'battiscopa' %}
@@ -171,32 +152,21 @@ product-form{
   {% endif %}
 {% endfor %}
 
-{% for i in arr %}
-  {% for coll in product.collections %}
-{% if i == coll.title %}
-
-        {% assign batti = true %}
-  {% assign gx = gxd %}
-    {% endif %}
-{% endfor %}
-  {% if batti == false or battie == true %}
-  {% assign gxd = gxd | plus: 1 %}
-    {% endif %}
-{% endfor %}
-
-{% if batti == true or battie == true %}
+{% if batti == true %}
 <section id="battscr">
 <link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
-{% include "prod-data" %}
 {% assign gxs = 0 %}
   {% for t in battipo %}
   {% for producte in collections.battiscopa.products %}
-  {% if producte.title == t and rtr == gxs or rtrx == gxs %}    
+  {% if producte.title == t and rtr == gxs %}    
     {%- assign product = producte -%}
   {% endif %}
   {% endfor %}
     {% assign gxs = gxs | plus: 1 %}
 {% endfor %}
+
+  
+
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
   {{ "component-product-model.css" | asset_url | stylesheet_tag }}
