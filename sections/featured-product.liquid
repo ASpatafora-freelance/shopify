@@ -19,7 +19,603 @@
   }
 {%- endstyle -%}
 
-{% include "battiscopa" %}
+<style>
+#battiscopacontainer  .battiscopamain{
+      min-width: 54%;
+  }
+variant-radios{
+  display:none;
+}
+#battiscopacontainer {
+    border: 2px solid #BCB698; {% comment %}#D76445;{% endcomment %}
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.battiscopatitle {
+    padding: 0 15px;
+    color: #272727;
+}
+.battiscopamain {
+    float: left;
+    padding: 5px 20px 0;
+}
+.battiscopaname {
+    margin-bottom: 5px;
+}
+.battiscopaform {
+    margin-right: 10px;
+    float: left;
+    line-height: 22px;
+}
+.battiscopaform label {
+    margin: 0;
+}
+label {
+    color: #000000;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 500;
+}
+.battiscopasub {
+    margin-right: 10px;
+}
+#battiscopacontainer .product-form__buttons .product-form__submit{
+    width: fit-content;
+    min-height: fit-content;
+    font-size: 13px;
+    color: #fff;
+    background: #272727;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 0.62rem 1.1rem;
+  transform:translateY(0px);
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.btn-battiscopa {
+    font-size: 12px;
+    color: #fff;
+    background: #272727;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+  .quantity{
+        min-height: fit-content;
+    font-size: 13px;
+    padding: 0.6rem;
+  }
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+}
+.btn-battiscopa .material-icons {
+    font-size: 14px;
+}
+#product-form-template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6{
+  width: fit-content;
+}
+product-form{
+  width: fit-content;
+      margin: 9px 0 0!important;
+}
+.product--no-media .product-form {
+      margin: 9px 0 0;
+}
+  #qtnftr .product-form__input {  
+    width: fit-content;
+    max-width: fit-content;
+        height: fit-content;
+    margin: 9px 0 0;
+  }
+  #qtnftr{
+    display: flex;
+    flex-wrap: wrap;
+        justify-content: space-evenly;
+  }
+</style>
+{% comment %}{% include "prod-data" %}{% endcomment %}
+
+{% assign battipo = ";Battiscopa Waterfall Silver 10x60" | split: ";" %}
+{% assign arr = ";Waterfall Silver 60x120" | split: ";" %}
+{% assign battiarr = ";0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,9.6,0;0,,9.6,0;0,,9.6,0;0,,9.6,0;0,,9.6,0;0,,9.6,0;0,,9.6,0;0,,9.6,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;,,7.2,;,,7.2,;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,7.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,2.2,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0;0,,8.40,0" | split: ";" %}
+
+{% assign proid = product.title | string %}
+{% assign gx = 0 %}
+{% assign gxx = 0 %}
+{% assign batti = false %}
+{% for i in arr %}
+
+  {% if proid == i %}
+        {% assign batti = true %}  
+  {% endif %}
+  
+  {% if batti == false %}
+  {% assign gx = gx | plus: 1 %}
+  {% endif %}
+  
+{% endfor %}
+
+{% assign rtr = gx %}
+
+{% for collection in product.collections %}
+  {% if collection.title == 'battiscopa' %}
+  <style>
+  #battscr{
+      display:none!important;
+  }
+  </style>
+  {% endif %}
+{% endfor %}
+
+{% if batti == true %}
+<section id="battscr">
+<link rel="stylesheet" href="{{ "component-deferred-media.css" | asset_url }}" media="print" onload="this.media="all"">
+{% assign gxs = 0 %}
+{% for t in battipo %}
+    {% if rtr == gxs  %}  
+       {%- assign tname = t -%}
+    {% endif %}  
+  {% assign gxs = gxs | plus: 1 %}
+{% endfor %}
+{% paginate collections.battiscopa.products by 256 %}
+{% for producte in collections.battiscopa.products %} 
+    {% if tname == producte.title %}  
+       {%- assign product = producte -%}
+    {% endif %}
+{% endfor %}
+{% endpaginate %}
+  
+{%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+{%- if first_3d_model -%}
+  {{ "component-product-model.css" | asset_url | stylesheet_tag }}
+  <link
+    id="ModelViewerStyle"
+    rel="stylesheet"
+    href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+    media="print"
+    onload="this.media="all""
+  >
+  <link
+    id="ModelViewerOverride"
+    rel="stylesheet"
+    href="{{ "component-model-viewer-ui.css" | asset_url }}"
+    media="print"
+    onload="this.media="all""
+  >
+{%- endif -%}
+
+<section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
+    <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  
+      <div class="product__info-wrapper grid__item">
+  
+        <div id="ProductInfo-{{ section.id }}" class="product__info-container">
+  
+  <div id="battiscopacontainer" class="clearfix">
+  <h4 class="battiscopatitle"><b>Desideri aggiungere il battiscopa?</b></h4>
+  <div class="battiscopamain">
+            <div class="battiscopaname">{{ product.title }}
+  <br>
+
+  {% assign prostatarr = battiarr %}
+  {% if batti == true %}
+      
+      {% assign prostate = prostatarr[rtr] | split: "," %}
+      {{ prostate[1] | replace: "\", "" }} <br/>
+      Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
+  
+    {% endif %}
+    
+  {% if battie == true and batti == false %}
+
+      {% assign prostate = prostatarr[rtrx] | split: "," %}
+      {{ prostate[1] | replace: "\", "" }}<br/>
+      Perimetro in metri lineari: <span id="contml">{{ prostate[2] }}</span>
+  
+    {% endif %}
+  </div>
+        </div>
+  
+          {%- assign product_form_id = "product-form-" | append: section.id -%}
+
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when "@app" -%}
+                {% render block %}
+              {%- when "price" -%}
+                <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render "price", product: product, use_variant: true, show_badges: true, price_class: "price--large" -%}
+                </div>
+                {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                  <div class="product__tax caption rte">
+                    {%- if shop.taxes_included -%}
+                      {{ "products.product.include_taxes" | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ "products.product.shipping_policy_html" | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                {%- if product != blank -%}
+                  <div {{ block.shopify_attributes }}>
+                    {%- form "product", product -%}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      {{ form | payment_terms }}
+                    {%- endform -%}
+                  </div>
+                {%- endif -%}
+              <div id="qtnftr">
+              {%- when "quantity_selector" -%}
+                <div
+                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  <quantity-input class="quantity">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">
+                        {{- "products.product.quantity.decrease" | t: product: product.title | escape -}}
+                      </span>
+                      {% render "icon-minus" %}
+                    </button>
+                    <input
+                      class="quantity__input"
+                      type="number"
+                      name="quantity"
+                      id="Quantity-{{ section.id }}"
+                      min="1"
+                      value="1"
+                      form="{{ product_form_id }}"
+                    >
+                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">
+                        {{- "products.product.quantity.increase" | t: product: product.title | escape -}}
+                      </span>
+                      {% render "icon-plus" %}
+                    </button>
+                  </quantity-input>
+                </div>              
+              {%- when "buy_buttons" -%}
+                <div {{ block.shopify_attributes }} style="width: fit-content;">
+                  {%- if product != blank -%}
+                    <product-form class="product-form">
+                      <div class="product-form__error-message-wrapper" role="alert" hidden>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="icon icon-error"
+                          viewBox="0 0 13 13"
+                        >
+                          <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                          <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                          <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                          <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+                        </svg>
+                        <span class="product-form__error-message"></span>
+                      </div>
+
+                      {%- form "product", product, id: product_form_id, class: "form", novalidate: "novalidate", data-type: "add-to-cart-form" -%}
+                        <input
+                          type="hidden"
+                          name="id"
+                          value="{{ product.selected_or_first_available_variant.id }}"
+                          disabled
+                        >
+                        <div class="product-form__buttons">
+                          <button
+                            type="submit"
+                            name="add"
+                            class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+                            {% if product.selected_or_first_available_variant.available == false %}
+                              disabled
+                            {% endif %}
+                          >
+                            <span>
+                              {%- if product.selected_or_first_available_variant.available -%}
+                                {{ "products.product.add_to_cart" | t }}
+                              {%- else -%}
+                                {{ "products.product.sold_out" | t }}
+                              {%- endif -%}
+                            </span>
+                            <div class="loading-overlay__spinner hidden">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                role="presentation"
+                                class="spinner"
+                                viewBox="0 0 66 66"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      {%- endform -%}
+                    </product-form>
+                  {%- else -%}
+                    <div class="product-form">
+                      <div class="product-form__buttons form">
+                        <button
+                          type="submit"
+                          name="add"
+                          class="product-form__submit button button--full-width button--primary"
+                          disabled
+                        >
+                          {{ "products.product.sold_out" | t }}
+                        </button>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                          </div>
+                          </div>
+                </div>
+            {%- endcase -%}           
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- if section.settings.media_position == "right" -%}
+        <div class="grid__item product__media-wrapper small-hide">
+          <media-gallery
+            id="MediaGallery-{{ section.id }}-right"
+            role="region"
+            aria-label="{{ "products.product.media.gallery_viewer" | t }}"
+            data-desktop-layout="stacked"
+          >
+            <div id="GalleryViewer-{{ section.id }}-right" class="product__media-list">
+              {%- if product.selected_or_first_available_variant.featured_media != null -%}
+                {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+                <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
+                  {% render "product-thumbnail", media: media, position: "featured", loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                </div>
+              {%- endif -%}
+              {%- for media in product.media -%}
+                {%- if media_to_render contains media.id and media.id != product.selected_or_first_available_variant.featured_media.id -%}
+                  <div class="product__media-item" data-media-id="{{ section.id }}-{{ media.id }}">
+                    {% render "product-thumbnail", media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: false, media_width: 0.5 %}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            {%- if first_3d_model -%}
+              <button
+                class="button button--full-width product__xr-button"
+                type="button"
+                aria-label="{{ "products.product.xr_button_label" | t }}"
+                data-shopify-xr
+                data-shopify-model3d-id="{{ first_3d_model.id }}"
+                data-shopify-title="{{ product.title | escape }}"
+                data-shopify-xr-hidden
+              >
+                {% render "icon-3d-model" %}
+                {{ "products.product.xr_button" | t }}
+              </button>
+            {%- endif -%}
+          </media-gallery>
+        </div>
+      {%- endif -%}
+    </div>
+    <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
+      <div
+        class="product-media-modal__dialog"
+        role="dialog"
+        aria-label="{{ "products.modal.label" | t }}"
+        aria-modal="true"
+        tabindex="-1"
+      >
+        <button
+          id="ModalClose-{{ section.id }}"
+          type="button"
+          class="product-media-modal__toggle"
+          aria-label="{{ "accessibility.close" | t }}"
+        >
+          {% render "icon-close" %}
+        </button>
+
+        <div
+          class="product-media-modal__content color-background-1 gradient"
+          role="document"
+          aria-label="{{ "products.modal.label" | t }}"
+          tabindex="0"
+        >
+          {%- liquid
+            if product.selected_or_first_available_variant.featured_media != null
+              assign media = product.selected_or_first_available_variant.featured_media
+              render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+            endif
+          -%}
+
+          {%- for media in product.media -%}
+            {%- liquid
+              if section.settings.hide_variants and media_to_render contains media.id
+                assign variant_image = true
+              else
+                assign variant_image = false
+              endif
+
+              unless media.id == product.selected_or_first_available_variant.featured_media.id
+                render "product-media", media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+              endunless
+            -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </product-modal>
+  </div>
+</section>
+
+<script src="{{ "product-form.js" | asset_url }}" defer="defer"></script>
+{%- if first_3d_model -%}
+  <script type="application/json" id="ProductJSON-{{ product.id }}">
+    {{ product.media | where: "media_type", "model" | json }}
+  </script>
+  <script src="{{ "product-model.js" | asset_url }}" defer></script>
+{%- endif -%}
+
+{%- liquid
+  if product.selected_or_first_available_variant.featured_media
+    assign seo_media = product.selected_or_first_available_variant.featured_media
+  else
+    assign seo_media = product.featured_media
+  endif
+-%}
+  <script type="text/javascript">
+  var conter = document.getElementById("battiscopacontainer");
+  var quant = document.getElementById("qtnftr").getElementsByClassName("quantity__input")[0];
+  var buto = conter.getElementsByClassName("quantity__button");
+  var sume = 1;
+  var sumes = 0;
+  var pricer = Number({{ product.price }});
+  pricer = pricer/100;
+  var rt = document.getElementById("contml").innerHTML;
+  rt = Number(rt);
+  sumesr = rt.toFixed(2); 
+  sumesrss = pricer/rt;
+  sumesrs = sumesrss.toFixed(2);  
+  document.getElementById("contml").innerHTML = sumesr +" ml";
+  document.getElementById('battiscopacontainer').getElementsByClassName('price-item')[0].innerHTML = sumesrs +" eur/ml";
+  for(let j = 0; j <= buto.length; j++){
+  if(j == 0){
+  buto[j].addEventListener("click", function(){
+     sume = parseInt(quant.value) - 1;
+     sumes = sume * rt;
+  if(sumes < rt){
+  sumes = rt;
+  }
+     sumes = (sumes).toFixed(2);
+     document.getElementById("contml").innerHTML = sumes+" ml";
+  });
+  }else{
+  buto[j].addEventListener("click", function(){
+     sume = 1 + parseInt(quant.value);
+     sumes = sume * rt;
+  if(sumes < rt){
+  sumes = rt;
+  }
+     sumes = (sumes).toFixed(2);
+     document.getElementById("contml").innerHTML = sumes+" ml";
+  });
+  }
+  }
+  </script>
+
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.product -%}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ request.origin | append: product.url | json }},
+    {% if seo_media -%}
+      "image": [
+        {{ seo_media | image_url: width: seo_media.preview_image.width | prepend: "https:" | json }}
+      ],
+    {%- endif %}
+    "description": {{ product.description | strip_html | json }},
+    {% if product.selected_or_first_available_variant.sku != blank -%}
+      "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    {%- endif %}
+    "brand": {
+      "@type": "Brand",
+      "name": {{ product.vendor | json }}
+    },
+    "offers": [
+      {%- for variant in product.variants -%}
+        {
+          "@type" : "Offer",
+          {%- if variant.sku != blank -%}
+            "sku": {{ variant.sku | json }},
+          {%- endif -%}
+          {%- if variant.barcode.size == 12 -%}
+              "gtin12": {{ variant.barcode }},
+          {%- endif -%}
+          {%- if variant.barcode.size == 13 -%}
+            "gtin13": {{ variant.barcode }},
+          {%- endif -%}
+          {%- if variant.barcode.size == 14 -%}
+            "gtin14": {{ variant.barcode }},
+          {%- endif -%}
+          "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : {{ variant.price | divided_by: 100.00 | json }},
+          "priceCurrency" : {{ cart.currency.iso_code | json }},
+          "url" : {{ request.origin | append: variant.url | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  }
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf("MSIE ");
+      const trident = ua.indexOf("Trident/");
+
+      return (msie > 0 || trident > 0);
+    }
+
+    if (!isIE()) return;
+    const hiddenInput = document.querySelector("#{{ product_form_id }} input[name="id"]");
+    const noScriptInputWrapper = document.createElement("div");
+    const variantSwitcher = document.querySelector("variant-radios[data-section="{{ section.id }}"]") || document.querySelector("variant-selects[data-section="{{ section.id }}"]");
+    noScriptInputWrapper.innerHTML = document.querySelector(".product-form__noscript-wrapper-{{ section.id }}").textContent;
+    variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
+
+    document.querySelector("#Variants-{{ section.id }}").addEventListener("change", function(event) {
+      hiddenInput.value = event.currentTarget.value;
+    });
+  });
+</script>
+
+{% if product.media.size > 0 %}
+  <script src="{{ "product-modal.js" | asset_url }}" defer="defer"></script>
+  <script src="{{ "media-gallery.js" | asset_url }}" defer="defer"></script>
+{% endif %}
+</section>
+<script>
+  var edo = document.getElementById("battscr");
+  var edos = document.getElementById("battiscr");
+
+  edo.addEventListener("load", function(){
+  edos.innerHTML = edo.innerHTML;
+  });
+</script>
+{% endif %}
 
 {% schema %}
 {
