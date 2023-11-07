@@ -154,15 +154,19 @@
       "settings": {
         "battiscopa_list": [
           "aesthetica-hegel-60x120-lucida",
-          "aesthetica-wilde-60x120-lucida",
-          "amazon-arara-20x120"
-        ],
-        "perimetro": "",
-        "product_list": [
-          "aesthetica-wilde-60x120-lucida",
           "amazon-arara-20x120",
+          "aesthetica-wilde-60x120-lucida",
+          "ardesia-bianco-40x120-grip-r11",
+          "acquamarina-milano-mood-50x125",
+          "aquitaine-beige-60x90",
+          "ardesia-bianco-60x120"
+        ],
+        "product_list": [
+          "amazon-arara-20x120",
+          "aesthetica-wilde-60x120-lucida",
           "aesthetica-hegel-60x120-lucida"
-        ]
+        ],
+        "perimetro": ""
       }
     },
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
