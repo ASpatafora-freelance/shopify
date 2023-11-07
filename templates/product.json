@@ -129,28 +129,9 @@
     "787ab4c8-9092-4b7d-8666-e469be744bb6": {
       "type": "featured-product",
       "blocks": {
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-0": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-1": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
         "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-2": {
           "type": "price",
           "settings": {
-          }
-        },
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-3": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
           }
         },
         "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-4": {
@@ -163,32 +144,25 @@
           "settings": {
             "show_dynamic_checkout": true
           }
-        },
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-6": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-0",
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-1",
         "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-2",
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-3",
         "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-4",
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-5",
-        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-6"
+        "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-5"
       ],
       "settings": {
-        "product": "battiscopa",
-        "color_scheme": "background-1",
-        "secondary_background": false,
-        "media_position": "left",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "battiscopa_list": [
+          "aesthetica-hegel-60x120-lucida",
+          "aesthetica-wilde-60x120-lucida",
+          "amazon-arara-20x120"
+        ],
+        "perimetro": "",
+        "product_list": [
+          "aesthetica-wilde-60x120-lucida",
+          "amazon-arara-20x120",
+          "aesthetica-hegel-60x120-lucida"
+        ]
       }
     },
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
