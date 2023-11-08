@@ -147,7 +147,6 @@ product-form{
 {% comment %} SLOT 1 {% endcomment %}
 {% assign battipocol = "" %}
 {% for cose in section.settings.battiscopa_list %}
-{{ cose.title }}
   {% assign battipocol = battipocol | append: cose.title | prepend: ";" %}
 {% endfor %}
 {{ battipocol }}
