@@ -212,7 +212,7 @@ product-form{
     onload="this.media="all""
   >
 {%- endif -%}
-
+{{ section.settings.product-list }}
 <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
   <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
     <div class="featured-product product grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -665,7 +665,7 @@ product-form{
   "settings": [
     {
   "type": "product_list",
-  "id": "product_list",
+  "id": "products_list",
   "label": "Prodotti - Slot 1"
 },
     {
