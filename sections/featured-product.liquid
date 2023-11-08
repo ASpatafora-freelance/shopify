@@ -147,7 +147,8 @@ product-form{
 {% comment %} SLOT 1 {% endcomment %}
 {% assign battipocol = "" %}
 {% for cose in section.settings.battiscopa_list %}
-  {% assign battipocol = battipocol | append: cose.title | prepend: ";" %}
+  {% assign battipoitem = cose.title | prepend: ";" %}
+  {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
 {{ battipocol }}
 {% assign battipo = ";Battiscopa Waterfall Silver 10x60" | split: ";" %}
