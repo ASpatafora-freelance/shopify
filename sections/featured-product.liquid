@@ -146,12 +146,12 @@ product-form{
 
 {% comment %} SLOT 1 {% endcomment %}
 {% assign battipocol = "" %}
+{% assign arrcol = "" %}
+{% assign battmis = "" %}
 {% for coseitem in section.settings.battiscopa_list %}
   {% assign battipoitem = coseitem.title | prepend: ";" %}
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
-{% assign arrcol = "" %}
-{% assign battmis = "" %}
 {% for cosearr in section.settings.products_list %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
