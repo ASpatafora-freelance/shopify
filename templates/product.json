@@ -152,17 +152,15 @@
         "template--16601405784310__787ab4c8-9092-4b7d-8666-e469be744bb6-16713002783321f06d-5"
       ],
       "settings": {
+        "products_list": [
+
+        ],
         "battiscopa_list": [
           "battiscopa-amazon-arara-6-5x120-sp-8-8mm",
           "battiscopa-aesthetica-wilde-6-5x120-sp-8-8mm-lucida",
           "battiscopa-aesthetica-hegel-6-5x120-sp-8-8mm-lucida"
         ],
-        "product_list": [
-          "amazon-arara-20x120",
-          "aesthetica-wilde-60x120-lucida",
-          "aesthetica-hegel-60x120-lucida"
-        ],
-        "perimetro": ""
+        "perimetro": "7.2"
       }
     },
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
