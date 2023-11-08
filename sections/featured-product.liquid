@@ -153,7 +153,7 @@ product-form{
 {% assign arrcol = "" %}
 {% assign battmis = "" %}
 {% for cosearr in section.settings.products_list %}
-  {% assign arritem = coseitem.title | prepend: ";" %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro | prepend: ";0,," %}
   {% assign battmisitem = battmisitem | append: ",0" %}
