@@ -213,7 +213,7 @@ product-form{
   >
 {%- endif -%}
 {% for cose in section.settings.battiscopa_list %}
-{{ cose }}
+{{ cose.name }}
 {% endfor %}
 {{ section.settings.battiscopa_list }}
 <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
