@@ -25,6 +25,36 @@
   {% assign specitem = section.settings.effetto | split: ";" %}
   {% assign specitems = specitems | append: specitem[cont1] %}
   {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.stonalizzazione | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.forma | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.formato | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.spessore | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.prezzoscatola | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.prezzomq | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.pesopallet| split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.mqpallet | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.pesoscatola | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.pezziscatola | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: ";" %}
   {% assign cont1 = cont1 | plus: 1 %}
 {% endfor %}
 {{ specitems }}
