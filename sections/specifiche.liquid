@@ -95,10 +95,11 @@
                      display:none;
                    }
                  </style>
+                 {% assign gxspitems = gxspitems | plus: 1 %}
                {% else %} 
                  {{ z }}<br/>
+                 {% assign gxspitems = gxspitems | plus: 1 %}
                {% endif %}
-               {% assign gxspitems = gxspitems | plus: 1 %}
              {% endfor %}  
             </p>
           {% endif %}
