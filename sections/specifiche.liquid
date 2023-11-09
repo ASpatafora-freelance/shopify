@@ -63,7 +63,67 @@
   {% assign cont1 = cont1 | plus: 1 %}
 {% endfor %}
 
-{% assign cont2 = 0 %}
+{% assign cont1 = 0 %}
+{% comment %} SLOT 2 {% endcomment %}
+{% for cosearr in section.settings.products_list2 %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
+  {% assign arrcol = arrcol | append: arritem %}
+  {% assign specitem = section.settings.produttore2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.codprodotto2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.scelta2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.materiale2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.finitura2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.effetto2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.stonalizzazione2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.forma2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.formato2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.spessore2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.prezzoscatola2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.prezzomq2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.pesopallet2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.mqpallet2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.scatolepallet2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.mqscatola2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.pesoscatola2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.pezziscatola2 | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: ";" %}
+  {% assign cont1 = cont1 | plus: 1 %}
+{% endfor %}
 {% assign specitems = specitems | prepend: ";" %}
 
 {% assign arrsp = arrcol | split: ";" %}
