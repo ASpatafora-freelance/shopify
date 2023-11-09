@@ -200,6 +200,27 @@
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
       "type": "specifiche",
       "settings": {
+        "products_list": [
+          "waterfall-dark-60x120"
+        ],
+        "produttore": "",
+        "codprodotto": "",
+        "scelta": "",
+        "materiale": "",
+        "finitura": "",
+        "effetto": "",
+        "stonalizzazione": "",
+        "forma": "",
+        "formato": "",
+        "spessore": "",
+        "prezzoscatola": "",
+        "prezzomq": "",
+        "pesopallet": "",
+        "mqpallet": "",
+        "scatolepallet": "",
+        "mqscatola": "",
+        "pesoscatola": "",
+        "pezziscatola": ""
       }
     },
     "7f2faeb1-fc46-4e94-b974-b1713b043387": {
