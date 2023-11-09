@@ -1,4 +1,21 @@
 
+{% assign battipocol = "" %}
+{% assign arrcol = "" %}
+{% assign battmis = "" %}
+
+{% comment %} SLOT 1 {% endcomment %}
+{% for coseitem in section.settings.battiscopa_list %}
+  {% assign battipoitem = coseitem.title | prepend: ";" %}
+  {% assign battipocol = battipocol | append: battipoitem %}
+{% endfor %}
+{% for cosearr in section.settings.products_list %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
+  {% assign arrcol = arrcol | append: arritem %}
+  {% assign battmisitem = section.settings.perimetro | prepend: ";0,," %}
+  {% assign battmisitem = battmisitem | append: ",0" %}
+  {% assign battmis = battmis | append: battmisitem %}
+{% endfor %}
+
 {% assign arrsp = ";Ceramiche;Waterfall Dark 60x120" | split: ";" %}
 {% assign sparr = ";,,,,,,,,,,,,,,,,,z;LEA CERAMICHE,,1°,Gres porcellanato,naturale,Ardesia,,rettangolare,60x120 cm,9.5 mm, €5,12 Kg/mq,12 mq per pallet,12 Kg per pallet,5,2 mq per scatola,2 Kg per scatola,2" | split: ";" %}
 {% assign proidsps = product.title | string %}
@@ -129,7 +146,23 @@
 {% schema %}
   {
     "name": "specifiche",
-    "settings": [],
+    "settings": [
+      {
+  "type": "product_list",
+  "id": "products_list",
+  "label": "Prodotti - Misura 1"
+},
+    {
+  "type": "product_list",
+  "id": "battiscopa_list",
+  "label": "Battiscopa - Misura 1"
+},
+    {
+  "type": "text",
+  "id": "perimetro",
+  "label": "Perimetro - 1"
+}
+    ],
     "templates": ["index", "page", "product"],
   "presets": [
     {
