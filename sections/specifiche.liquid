@@ -10,6 +10,21 @@
   {% assign specitem = section.settings.produttore | split: ";" %}
   {% assign specitems = specitems | append: specitem[cont1] %}
   {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.codprodotto | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.scelta | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.materiale | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.finitura | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.effetto | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
   {% assign cont1 = cont1 | plus: 1 %}
 {% endfor %}
 {{ specitems }}
