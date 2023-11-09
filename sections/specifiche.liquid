@@ -1,17 +1,11 @@
-
-{% assign battipocol = "" %}
 {% assign arrcol = "" %}
 {% assign battmis = "" %}
 
 {% comment %} SLOT 1 {% endcomment %}
-{% for coseitem in section.settings.battiscopa_list %}
-  {% assign battipoitem = coseitem.title | prepend: ";" %}
-  {% assign battipocol = battipocol | append: battipoitem %}
-{% endfor %}
 {% for cosearr in section.settings.products_list %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
-  {% assign battmisitem = section.settings.perimetro | prepend: ";0,," %}
+  {% assign battmisitem = section.settings.produttore | prepend: ";0,," %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
 {% endfor %}
