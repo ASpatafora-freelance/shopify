@@ -53,11 +53,11 @@
 <section style="display:flex;flex-wrap:wrao;">
 <div style="width:50%;padding-right:2px;">
 <p id="listed" style="text-align:right;font-weight:800;">
-  <span>Titolo:</span><br/>
-  <span>Produttore:</span><br/>
-  <span>Codice prodotto:</span><br/>
-  <span>Scelta:</span><br/>
-  <span>Materiale:</span><br/>
+  <span>Titolo:<br/></span>
+  <span>Produttore:<br/></span>
+  <span>Codice prodotto:<br/></span>
+  <span>Scelta:<br/></span>
+  <span>Materiale:<br/></span>
   <span>Finitura:</span><br/>
   <span>Effetto:</span><br/>
   <span>Stonalizzazione:</span><br/>
@@ -89,9 +89,6 @@
                {% if z=="" %}
                  <style>
                    #listed span:nth-child({{ gxspitems }}){
-                     display:none;
-                   }
-                   #listed br:nth-child({{ gxspitems }}){
                      display:none;
                    }
                  </style>
