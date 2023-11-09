@@ -48,6 +48,12 @@
   {% assign specitem = section.settings.mqpallet | split: ";" %}
   {% assign specitems = specitems | append: specitem[cont1] %}
   {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.scatolepallet | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
+  {% assign specitem = section.settings.mqscatola | split: ";" %}
+  {% assign specitems = specitems | append: specitem[cont1] %}
+  {% assign specitems = specitems | append: "," %}
   {% assign specitem = section.settings.pesoscatola | split: ";" %}
   {% assign specitems = specitems | append: specitem[cont1] %}
   {% assign specitems = specitems | append: "," %}
