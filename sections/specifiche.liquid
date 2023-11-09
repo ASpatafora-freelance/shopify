@@ -62,6 +62,8 @@
   {% assign specitems = specitems | append: ";" %}
   {% assign cont1 = cont1 | plus: 1 %}
 {% endfor %}
+
+{% assign cont2 = 0 %}
 {% assign specitems = specitems | prepend: ";" %}
 
 {% assign arrsp = arrcol | split: ";" %}
