@@ -6,7 +6,6 @@
 {% for cosearr in section.settings.products_list %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
-  {% assign specitems = specitems | prepend: ";" %}
   {% assign specitem = section.settings.produttore | split: ";" %}
   {% assign specitems = specitems | append: specitem[cont1] %}
   {% assign specitems = specitems | append: "," %}
@@ -57,6 +56,7 @@
   {% assign specitems = specitems | append: ";" %}
   {% assign cont1 = cont1 | plus: 1 %}
 {% endfor %}
+{% assign specitems = specitems | prepend: ";" %}
 {{ specitems }}
 
 {% assign arrsp = arrcol | split: ";" %}
