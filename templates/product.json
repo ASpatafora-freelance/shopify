@@ -201,7 +201,8 @@
       "type": "specifiche",
       "settings": {
         "products_list": [
-          "waterfall-dark-60x120"
+          "waterfall-dark-60x120",
+          "amazon-arara-20x120"
         ],
         "produttore": "LEA CERAMICHE;edo",
         "codprodotto": "",
