@@ -162,7 +162,39 @@
           "battiscopa-aesthetica-wilde-6-5x120-sp-8-8mm-lucida",
           "battiscopa-aesthetica-hegel-6-5x120-sp-8-8mm-lucida"
         ],
-        "perimetro": "7.2"
+        "perimetro": "7.2",
+        "products_list2": [
+          "amazon-kamba-20x120",
+          "amazon-matis-20x120",
+          "amazon-nawa-20x120"
+        ],
+        "battiscopa_list2": [
+          "battiscopa-amazon-kamba-6-5x120-sp-8-8mm",
+          "battiscopa-amazon-matis-6-5x120-sp-8-8mm",
+          "battiscopa-amazon-nawa-6-5x120-sp-8-8mm"
+        ],
+        "perimetro2": "8.2",
+        "products_list3": [
+
+        ],
+        "battiscopa_list3": [
+
+        ],
+        "perimetro3": "",
+        "products_list4": [
+
+        ],
+        "battiscopa_list4": [
+
+        ],
+        "perimetro4": "",
+        "products_list5": [
+
+        ],
+        "battiscopa_list5": [
+
+        ],
+        "perimetro5": ""
       }
     },
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
