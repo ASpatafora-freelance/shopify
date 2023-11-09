@@ -77,6 +77,7 @@
   <div style="width:50%;padding-left:2px;">
 {% assign proidsp = product.title | string %}
 {% assign gxsp = 0 %}
+{% assign gxspitems = 1 %}
 {% assign gxsps = 0 %}<p>{{ product.title }}<br/>
 {% for i in arrsp %}
     {% if proidsp == i %}
@@ -86,7 +87,16 @@
             
              {% assign arri = j | split: "," %}
              {% for z in arri %}
+               {% if z=="" %}
+                 <style>
+                   #listed span:nth-child({{ gxspitems }}){
+                     display:none;
+                   }
+                 </style>
+               {% else %} 
                  {{ z }}<br/>
+               {% endif %}
+               {% assign gxspitems = gxspitems | plus: 1 %}
              {% endfor %}  
             </p>
           {% endif %}
