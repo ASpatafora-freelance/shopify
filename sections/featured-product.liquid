@@ -172,6 +172,42 @@ product-form{
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
 {% endfor %}
+{% comment %} SLOT 3 {% endcomment %}
+{% for coseitem in section.settings.battiscopa_list3 %}
+  {% assign battipoitem = coseitem.title | prepend: ";" %}
+  {% assign battipocol = battipocol | append: battipoitem %}
+{% endfor %}
+{% for cosearr in section.settings.products_list3 %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
+  {% assign arrcol = arrcol | append: arritem %}
+  {% assign battmisitem = section.settings.perimetro3 | prepend: ";0,," %}
+  {% assign battmisitem = battmisitem | append: ",0" %}
+  {% assign battmis = battmis | append: battmisitem %}
+{% endfor %}
+{% comment %} SLOT 4 {% endcomment %}
+{% for coseitem in section.settings.battiscopa_list4 %}
+  {% assign battipoitem = coseitem.title | prepend: ";" %}
+  {% assign battipocol = battipocol | append: battipoitem %}
+{% endfor %}
+{% for cosearr in section.settings.products_list4 %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
+  {% assign arrcol = arrcol | append: arritem %}
+  {% assign battmisitem = section.settings.perimetro4 | prepend: ";0,," %}
+  {% assign battmisitem = battmisitem | append: ",0" %}
+  {% assign battmis = battmis | append: battmisitem %}
+{% endfor %}
+{% comment %} SLOT 5 {% endcomment %}
+{% for coseitem in section.settings.battiscopa_list5 %}
+  {% assign battipoitem = coseitem.title | prepend: ";" %}
+  {% assign battipocol = battipocol | append: battipoitem %}
+{% endfor %}
+{% for cosearr in section.settings.products_list5 %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
+  {% assign arrcol = arrcol | append: arritem %}
+  {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
+  {% assign battmisitem = battmisitem | append: ",0" %}
+  {% assign battmis = battmis | append: battmisitem %}
+{% endfor %}
 
 
 {% assign battipo = battipocol | split: ";" %}
