@@ -92,11 +92,10 @@
                      display:none;
                    }
                  </style>
-                 {% assign gxspitems = gxspitems | plus: 1 %}
                {% else %} 
                  {{ z }}<br/>
-                 {% assign gxspitems = gxspitems | plus: 1 %}
                {% endif %}
+               {% assign gxspitems = gxspitems | plus: 1 %}
              {% endfor %}  
             </p>
           {% endif %}
@@ -112,7 +111,9 @@
 </section>
 {% endif %}
 {% if spc == false and spcxd == true %}
+  {% assign gxsp = 0 %}
 {% assign gxspitems = 2 %}
+{% assign gxsps = 0 %}
 <h2 style="margin-left:14%;">Specifice</h2>
 <section style="display:flex;flex-wrap:wrao;">
 <div style="width:50%;padding-right:2px;">
@@ -142,7 +143,16 @@
 <p>{{ product.title }}<br/>
     {% assign arrin = er | split: "," %}
              {% for z in arrin %}
+                  {% if z=="" %}
+                 <style>
+                   #listed span:nth-child({{ gxspitems }}){
+                     display:none;
+                   }
+                 </style>
+               {% else %} 
                  {{ z }}<br/>
+               {% endif %}
+               {% assign gxspitems = gxspitems | plus: 1 %}
              {% endfor %} 
   </div>
 
