@@ -221,7 +221,28 @@
         "scatolepallet": "5;prova",
         "mqscatola": "2 mq per scatola;prova",
         "pesoscatola": "2 Kg per scatola;prova",
-        "pezziscatola": "2;prova"
+        "pezziscatola": "2;prova",
+        "products_list2": [
+          "aesthetica-wilde-60x120-lucida"
+        ],
+        "produttore2": "prova",
+        "codprodotto2": "",
+        "scelta2": "",
+        "materiale2": "",
+        "finitura2": "",
+        "effetto2": "",
+        "stonalizzazione2": "",
+        "forma2": "",
+        "formato2": "",
+        "spessore2": "",
+        "prezzoscatola2": "",
+        "prezzomq2": "",
+        "pesopallet2": "",
+        "mqpallet2": "",
+        "scatolepallet2": "",
+        "mqscatola2": "",
+        "pesoscatola2": "",
+        "pezziscatola2": ""
       }
     },
     "7f2faeb1-fc46-4e94-b974-b1713b043387": {
