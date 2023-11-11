@@ -190,10 +190,6 @@
           "battiscopa-ardesia-cenere-6-5x120-sp-8-8mm"
         ],
         "perimetro4": "2.1",
-        "perimetro42": "6.1",
-        "dariga4": "2",
-        "perimetro43": "",
-        "dariga5": "",
         "products_list5": [
           "ardesia-cenere-60x120",
           "ardesia-taupe-60x120",
@@ -208,7 +204,19 @@
         "perimetro52": "4.2",
         "dariga2": "2",
         "perimetro53": "3",
-        "dariga3": "3"
+        "dariga3": "3",
+        "products_list6": [
+          "amazon-matis-20x120",
+          "amazon-nawa-20x120"
+        ],
+        "battiscopa_list6": [
+
+        ],
+        "perimetro6": "",
+        "perimetro62": "",
+        "dariga4": "2",
+        "perimetro63": "",
+        "dariga5": ""
       }
     },
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
