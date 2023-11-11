@@ -209,7 +209,7 @@ product-form{
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
-  {% if forloop.index0 == 2 %}
+  {% if forloop.index0 == dariga2s %}
       {% assign battmisitem = section.settings.perimetro6 | prepend: ";0,," %}
   {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
