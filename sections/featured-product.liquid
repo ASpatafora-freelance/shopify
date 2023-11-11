@@ -207,10 +207,10 @@ product-form{
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
-  {% if forloop.index0 > dariga2s %}
+  {% if forloop.index0 > dariga2s and section.settings.dariga2 != "" %}
       {% assign battmisitem = section.settings.perimetro52 | prepend: ";0,," %}
   {% endif %}
-  {% if forloop.index0 > dariga3s %}
+  {% if forloop.index0 > dariga3s and section.settings.dariga3 != "" %}
       {% assign battmisitem = section.settings.perimetro53 | prepend: ";0,," %}
   {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
