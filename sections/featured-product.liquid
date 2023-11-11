@@ -210,12 +210,6 @@ product-form{
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
   {% assign slotmistcontstring = slotmistcont | append: "" %}
-  {% if slotmistcont >= dariga2s %}
-    {% assign battmisitem = section.settings.perimetro6 | prepend: ";0,," %}
-  {% endif %}
-  {% if slotmistcont >= dariga3s %}
-    {% assign battmisitem = section.settings.perimetro7 | prepend: ";0,," %}
-  {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
   {{ slotmistcost }}
