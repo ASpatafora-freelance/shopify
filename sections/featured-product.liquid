@@ -221,8 +221,8 @@ product-form{
   {% assign battipoitem = coseitem.title | prepend: ";" %}
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
-{% assign dariga4s = section.settings.dariga4 | minus: 2 %}
-{% assign dariga5s = section.settings.dariga5 | minus: 2 %}
+{% assign dariga4s = section.settings.dariga4s | minus: 2 %}
+{% assign dariga5s = section.settings.dariga5s | minus: 2 %}
 {{ dariga4s }}
 {% for cosearr in section.settings.products_list6 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
