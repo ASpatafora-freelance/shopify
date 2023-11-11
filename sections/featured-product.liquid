@@ -220,6 +220,7 @@ product-form{
   {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
+  {{ slotmistcost }}
   {% assign slotmistcont = slotmistcont | plus: 1 %}
 {% endfor %}
 
