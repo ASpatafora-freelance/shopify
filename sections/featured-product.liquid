@@ -191,6 +191,7 @@ product-form{
 {% endfor %}
 {% assign dariga4s = section.settings.dariga4 | minus: 2 %}
 {% assign dariga5s = section.settings.dariga5 | minus: 2 %}
+{{ section.settings.perimetro4 }}
 {% for cosearr in section.settings.products_list4 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
