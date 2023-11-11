@@ -202,6 +202,7 @@ product-form{
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
 {% assign slotmistcont = 1 %}
+{% assign slotmistcontstring = '1' %}
 {% assign dariga2 = section.settings.dariga2 | to_i %}
 {% assign dariga3 = section.settings.dariga3 | to_i %}
 {{ dariga2 }}
@@ -210,10 +211,11 @@ product-form{
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
-  {% if slotmistcont > dariga2 %}
+  {% assign slotmistcontstring = slotmistcont | append: "" %}
+  {% if slotmistcontstring == section.settings.dariga2 %}
     {% assign battmisitem = section.settings.perimetro6 | prepend: ";0,," %}
   {% endif %}
-  {% if slotmistcont > dariga3 %}
+  {% if slotmistcontstring == section.settings.dariga3 %}
     {% assign battmisitem = section.settings.perimetro7 | prepend: ";0,," %}
   {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
