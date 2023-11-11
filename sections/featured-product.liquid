@@ -223,7 +223,7 @@ product-form{
 {% endfor %}
 {% assign dariga4s = section.settings.dariga4 | minus: 2 %}
 {% assign dariga5s = section.settings.dariga5 | minus: 2 %}
-{{ dariga4 }}
+{{ dariga4s }}
 {% for cosearr in section.settings.products_list6 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
