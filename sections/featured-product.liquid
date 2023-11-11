@@ -189,19 +189,10 @@ product-form{
   {% assign battipoitem = coseitem.title | prepend: ";" %}
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
-{% assign dariga4s = section.settings.dariga4 | minus: 2 %}
-{% assign dariga5s = section.settings.dariga5 | minus: 2 %}
-{{ section.settings.perimetro4 }}
 {% for cosearr in section.settings.products_list4 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro4 | prepend: ";0,," %}
-  {% if forloop.index0 > dariga4s %}
-      {% assign battmisitem = section.settings.perimetro42 | prepend: ";0,," %}
-  {% endif %}
-  {% if forloop.index0 > dariga5s %}
-      {% assign battmisitem = section.settings.perimetro43 | prepend: ";0,," %}
-  {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
 {% endfor %}
@@ -803,23 +794,7 @@ product-form{
 {
   "type": "text",
   "id": "perimetro4",
-  "label": "Perimetro - 4.1"
-},{
-  "type": "text",
-  "id": "perimetro42",
-  "label": "Perimetro - 4.2"
-},{
-  "type": "text",
-  "id": "dariga4",
-  "label": "Perimetro - 4.2, dalla riga:"
-},{
-  "type": "text",
-  "id": "perimetro43",
-  "label": "Perimetro - 4.3"
-},{
-  "type": "text",
-  "id": "dariga5",
-  "label": "Perimetro - 4.3, dalla riga:"
+  "label": "Perimetro - 4"
 },
 {
   "type": "product_list",
