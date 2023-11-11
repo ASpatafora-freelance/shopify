@@ -231,9 +231,6 @@ product-form{
   {% if forloop.index0 > dariga4s %}
       {% assign battmisitem = section.settings.perimetro62 | prepend: ";0,," %}
   {% endif %}
-  {% if forloop.index0 > dariga5s %}
-      {% assign battmisitem = section.settings.perimetro63 | prepend: ";0,," %}
-  {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
   {{ forloop.index0 }}
