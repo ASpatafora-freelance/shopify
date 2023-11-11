@@ -222,8 +222,6 @@ product-form{
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
 {% assign dariga4s = section.settings.dariga4s | minus: 2 %}
-{% assign dariga5s = section.settings.dariga5s | minus: 2 %}
-{{ dariga4s }}
 {% for cosearr in section.settings.products_list6 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
@@ -868,14 +866,6 @@ product-form{
   "type": "text",
   "id": "dariga4s",
   "label": "Perimetro - 6.2, dalla riga:"
-},{
-  "type": "text",
-  "id": "perimetro63",
-  "label": "Perimetro - 6.3"
-},{
-  "type": "text",
-  "id": "dariga5s",
-  "label": "Perimetro - 6.3, dalla riga:"
 }
   ],
   "presets": [
