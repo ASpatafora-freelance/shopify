@@ -189,12 +189,21 @@
         ],
         "perimetro4": "",
         "products_list5": [
-
+          "ardesia-cenere-60x120",
+          "ardesia-taupe-60x120",
+          "amazon-surma-20x120"
         ],
         "battiscopa_list5": [
-
+          "battiscopa-ardesia-cenere-6-5x120-sp-8-8mm",
+          "battiscopa-ardesia-taupe-6-5x120-sp-8-8mm",
+          "battiscopa-amazon-surma-6-5x120-sp-8-8mm"
         ],
-        "perimetro5": ""
+        "perimetro5": "2.2",
+        "dariga1": "1",
+        "perimetro6": "8.4",
+        "dariga2": "3",
+        "perimetro7": "",
+        "dariga3": ""
       }
     },
     "3c620ab0-1ee8-478c-9d49-c44e397d8186": {
