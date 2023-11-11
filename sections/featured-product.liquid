@@ -210,7 +210,7 @@ product-form{
   {% assign arrcol = arrcol | append: arritem %}
   {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
   {% if dariga2s == forloop.index0 %}
-  {% assign slotmistcontstring = slotmistcont | append: "" %}
+      {% assign battmisitem = section.settings.perimetro6 | prepend: ";0,," %}
   {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
