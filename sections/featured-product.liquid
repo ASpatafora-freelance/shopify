@@ -216,6 +216,26 @@ product-form{
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
 {% endfor %}
+{% comment %} SLOT 6 {% endcomment %}
+{% for coseitem in section.settings.battiscopa_list6 %}
+  {% assign battipoitem = coseitem.title | prepend: ";" %}
+  {% assign battipocol = battipocol | append: battipoitem %}
+{% endfor %}
+{% assign dariga4s = section.settings.dariga4 | minus: 2 %}
+{% assign dariga5s = section.settings.dariga5 | minus: 2 %}
+{% for cosearr in section.settings.products_list6 %}
+  {% assign arritem = cosearr.title | prepend: ";" %}
+  {% assign arrcol = arrcol | append: arritem %}
+  {% assign battmisitem = section.settings.perimetro6 | prepend: ";0,," %}
+  {% if forloop.index0 > dariga4s %}
+      {% assign battmisitem = section.settings.perimetro62 | prepend: ";0,," %}
+  {% endif %}
+  {% if forloop.index0 > dariga5s %}
+      {% assign battmisitem = section.settings.perimetro63 | prepend: ";0,," %}
+  {% endif %}
+  {% assign battmisitem = battmisitem | append: ",0" %}
+  {% assign battmis = battmis | append: battmisitem %}
+{% endfor %}
 
 
 {% assign battipo = battipocol | split: ";" %}
