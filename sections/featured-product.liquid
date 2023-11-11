@@ -201,14 +201,22 @@ product-form{
   {% assign battipoitem = coseitem.title | prepend: ";" %}
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
-{% assign slotmistcont = 0 %}
+{% assign slotmistcont = 1 %}
 {% assign dariga1 = section.settings.dariga1 | to_i %}
 {% assign dariga2 = section.settings.dariga2 | to_i %}
 {% assign dariga3 = section.settings.dariga3 | to_i %}
 {% for cosearr in section.settings.products_list5 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
-  {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
+  {% if slotmistcont >= dariga1 %}
+    {% assign battmisitem = section.settings.perimetro5 | prepend: ";0,," %}
+  {% endif %}
+  {% if slotmistcont >= dariga2 %}
+    {% assign battmisitem = section.settings.perimetro6 | prepend: ";0,," %}
+  {% endif %}
+  {% if slotmistcont >= dariga3 %}
+    {% assign battmisitem = section.settings.perimetro7 | prepend: ";0,," %}
+  {% endif %}
   {% assign battmisitem = battmisitem | append: ",0" %}
   {% assign battmis = battmis | append: battmisitem %}
   {% assign slotmistcont = slotmistcont | plus: 1 %}
