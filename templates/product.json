@@ -182,14 +182,16 @@
         ],
         "perimetro3": "",
         "products_list4": [
-
+          "ardesia-bianco-60x120",
+          "ardesia-bianco-60x120-grip-r11"
         ],
         "battiscopa_list4": [
-
+          "battiscopa-ardesia-bianco-6-5x120-sp-8-8mm",
+          "battiscopa-ardesia-cenere-6-5x120-sp-8-8mm"
         ],
-        "perimetro4": "",
-        "perimetro42": "",
-        "dariga4": "",
+        "perimetro4": "1",
+        "perimetro42": "6",
+        "dariga4": "2",
         "perimetro43": "",
         "dariga5": "",
         "products_list5": [
