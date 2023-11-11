@@ -202,6 +202,9 @@ product-form{
   {% assign battipocol = battipocol | append: battipoitem %}
 {% endfor %}
 {% assign slotmistcont = 0 %}
+{% assign dariga1 = section.settings.dariga1 | to_i %}
+{% assign dariga2 = section.settings.dariga2 | to_i %}
+{% assign dariga3 = section.settings.dariga3 | to_i %}
 {% for cosearr in section.settings.products_list5 %}
   {% assign arritem = cosearr.title | prepend: ";" %}
   {% assign arrcol = arrcol | append: arritem %}
